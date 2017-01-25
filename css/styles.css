@@ -1,0 +1,17 @@
+/*custom css for Tattoo Design Webpage*/
+/*navbar index.htm*/
+
+
+.navbar-default .navbar-nav li a{
+	color: #fff;
+}
+.navbar{
+  height:20px;
+  background: #808080; 
+  opacity: 0.5;
+}
+
+li a {
+    display: block;
+}
+
