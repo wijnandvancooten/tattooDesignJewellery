@@ -3,19 +3,6 @@
 /*navbar index.htm*/
 
 
-.navbar-default .navbar-nav li a{
-	color: #fff;
-}
-.navbar{
-  height:20px;
-  background: #808080; 
-  opacity: 0.5;
-}
-
-li a {
-    display: block;
-}
-
 =======
 .jumbotron {
 	background:  url('../images/Header/Header_3.jpg');
@@ -25,4 +12,61 @@ li a {
     background-size: cover;;
 	height: 100vh;
 }
->>>>>>> jumbotron
+>>>>>>> 
+.hamburgerDiv{
+    right: 0%;
+    position:fixed;
+}
+.hamburger{
+    background:none;
+    float: right;
+    right: 0%;
+    position:fixed;
+    line-height:45px;
+    padding:5px 15px 0px 15px;
+    color: black;
+    border:0;
+    font-size:1.4em;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:100000;
+}
+
+.menu{
+	z-index:1000000; 
+    float: right;
+    margin-top: 20px; 
+	right: 0%;
+	position:fixed;
+	font-weight:bold; 
+	font-size:1.0em; 
+	width:140px; 
+    background:#131313;
+	opacity: 0.5;
+	}
+	
+.menu ul {
+	margin: 0; 
+	padding: 0; 
+	list-style-type: none; 
+	list-style-image: none;
+    }
+.menu li {
+	display: block;   
+	padding:15px 0 15px 0; 
+	border-bottom:#1d1f20 1px solid;
+    text-align:center;
+    }
+
+.menu ul li a { 
+	text-decoration:none;  
+	margin: 0px; 
+	color:#fff;
+    }
+
+.menu ul li a:hover {
+    color: gray;
+    background-color: blue;
+}
+
