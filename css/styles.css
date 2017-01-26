@@ -7,33 +7,8 @@
 }
 
 @font-face {
-  font-family: 'ATViCE';
-  src: url('../fonts/ATViCE/ATViCE.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-family: 'BEAVER';
-  src: url('../fonts/BEAVER V1.0 by Rui Rodrigues/beaver.ttf') format('truetype'); /* Safari, Android, iOS */
-}
-
-@font-face {
-  font-family: 'DistantStroke';
-  src: url('../fonts/Distant_stroke/Distant_Stroke.otf') format('opentype');
-}
-
-@font-face {
   font-family: 'DistantStroke_Medium';
   src: url('../fonts/Distant_stroke/Distant_Stroke_Medium.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'RBNo2';
-  src: url('../fonts/RBN/RBNo2Light.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'RBNo2a';
-  src: url('../fonts/RBN/RBNo2Light_a.otf') format('opentype');
 }
 
 @font-face {
@@ -41,44 +16,15 @@
   src: url('../fonts/Shopping_script/ShoppingScriptDemo.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Simplifica';
-  src: url('../fonts/SIMPLIFICA/SIMPLIFICATypeface.ttf') format('truetype');
-}
-
 /* FONT TESTING */
 .anodyne{
   font-family: "Anodyne";
-}
-
-.atvice{
-  font-family: "ATViCE";
-}
-
-.beaver{
-  font-family: "BEAVER";
-  }
-
-.distant_stroke{
-  font-family: "DistantStroke";
 }
 
 .distant_stroke_medium{
   font-family: "DistantStroke_Medium";
 }
 
-.rbno{
-  font-family: "RBNo2";
-}
-
-.rbnoa{
-  font-family: "RBNo2a";
-}
-
 .shopping{
   font-family: "ShoppingScript";
-}
-
-.simplifica{
-  font-family: "Simplifica";
 }
