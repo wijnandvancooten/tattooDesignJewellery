@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*custom css for Tattoo Design Webpage*/
 /*navbar index.htm*/
 
@@ -70,3 +71,48 @@
     background-color: blue;
 }
 
+=======
+
+@font-face {
+  font-family: 'Anodyne';
+  src: url('../fonts/Anodyne/f4258f11-b720-4398-8e6e-9d384824b6f0.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Anodyne/365aff48-07e3-4a81-871f-f4fdf0d5f04b.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Anodyne/8312f781-2ff7-43ff-bcb2-a15f3e8ab027.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Anodyne/b8fd6352-55cc-4d34-91d6-400e852f539b.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'DistantStroke_Medium';
+  src: url('../fonts/Distant_stroke/Distant_Stroke_Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ShoppingScript';
+  src: url('../fonts/Shopping_script/ShoppingScriptDemo.ttf') format('truetype');
+}
+
+body, html {
+  font-size: 100%;
+}
+
+#anodyne{
+  font-family: "Anodyne";
+  font-size: 5em;
+  margin-left: 5%;
+  color: white;
+}
+
+#shopping{
+  font-family: "ShoppingScript";
+  font-size: 90px;
+}
+
+.jumbotron {
+	background:  url('../images/Header/Header_3.jpg') center;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	height: 100vh;
+}
+>>>>>>> master
