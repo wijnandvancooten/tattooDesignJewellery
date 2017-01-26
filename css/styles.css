@@ -60,6 +60,11 @@ body, html {
 .shopping_list_item img {
   width: 300px;
   height: 300px;
+  opacity: 1;
+}
+
+.shopping_list_item > img:hover {
+  opacity: .7;
 }
 
 .sold_out {
@@ -76,10 +81,11 @@ body, html {
 }
 
 .sold_out h1 {
+  font-size: 40px;
   position: absolute;
   text-align: center;
   top: 85px;
-  left: 55px;
+  left: 50px;
   color: #fff;
 }
 
