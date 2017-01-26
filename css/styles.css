@@ -1,4 +1,5 @@
 
+
 @font-face {
   font-family: 'Anodyne';
   src: url('../fonts/Anodyne/f4258f11-b720-4398-8e6e-9d384824b6f0.eot'); /* IE9 Compat Modes */
@@ -41,3 +42,19 @@ body, html {
   background-size: cover;
 	height: 100vh;
 }
+=======
+.jumbotron {
+	background:  url('../images/Header/Header_3.jpg') center;
+	-webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+    background-size: cover;;
+	height: 100vh;
+}
+
+.item{
+    margin: 5%;
+    width: 14%;
+    padding-top:14%;
+}
+
