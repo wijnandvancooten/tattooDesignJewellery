@@ -42,23 +42,24 @@ body, html {
 
 /*** Shopping Grid Section ***/
 .shopping_container {
-  display: flex;
   width: 100%;
 }
 
 .shopping_list {
   list-style: none;
   display: flex;
-  padding-left: 0px;
-  align-self: center;
-  justify-content: center;
   flex-wrap: wrap;
+  padding-left: 0;
+  justify-content: center;
 }
 
 .shopping_list_item {
-  float: left;
   margin: 1.3em;
-  width: 100%;
+}
+
+.shopping_list_item img {
+  width: 300px;
+  height: 300px;
 }
 
 .preview {
