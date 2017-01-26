@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'Anodyne';
+  src: url('../fonts/Anodyne/f4258f11-b720-4398-8e6e-9d384824b6f0.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Anodyne/365aff48-07e3-4a81-871f-f4fdf0d5f04b.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Anodyne/8312f781-2ff7-43ff-bcb2-a15f3e8ab027.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Anodyne/b8fd6352-55cc-4d34-91d6-400e852f539b.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'ATViCE';
+  src: url('../fonts/ATViCE/ATViCE.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'BEAVER';
+  src: url('../fonts/BEAVER V1.0 by Rui Rodrigues/beaver.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'DistantStroke';
+  src: url('../fonts/Distant_stroke/Distant_Stroke.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'DistantStroke_Medium';
+  src: url('../fonts/Distant_stroke/Distant_Stroke_Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'RBNo2';
+  src: url('../fonts/RBN/RBNo2Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'RBNo2a';
+  src: url('../fonts/RBN/RBNo2Light_a.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'ShoppingScript';
+  src: url('../fonts/Shopping_script/ShoppingScriptDemo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Simplifica';
+  src: url('../fonts/SIMPLIFICA/SIMPLIFICATypeface.ttf') format('truetype');
+}
+
+/* FONT TESTING */
+.anodyne{
+  font-family: "Anodyne";
+}
+
+.atvice{
+  font-family: "ATViCE";
+}
+
+.beaver{
+  font-family: "BEAVER";
+  }
+
+.distant_stroke{
+  font-family: "DistantStroke";
+}
+
+.distant_stroke_medium{
+  font-family: "DistantStroke_Medium";
+}
+
+.rbno{
+  font-family: "RBNo2";
+}
+
+.rbnoa{
+  font-family: "RBNo2a";
+}
+
+.shopping{
+  font-family: "ShoppingScript";
+}
+
+.simplifica{
+  font-family: "Simplifica";
+}
