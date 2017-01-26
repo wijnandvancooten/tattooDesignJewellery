@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*custom css for Tattoo Design Webpage*/
 /*navbar index.htm*/
 
@@ -15,3 +16,13 @@ li a {
     display: block;
 }
 
+=======
+.jumbotron {
+	background:  url('../images/Header/Header_3.jpg');
+	-webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+    background-size: cover;;
+	height: 100vh;
+}
+>>>>>>> jumbotron
