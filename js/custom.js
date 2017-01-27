@@ -4,8 +4,15 @@ $( ".menu" ).hide();
 $( ".hamburger" ).click(function() {
 $( ".menu" ).slideToggle( "slow");
 });
+$( "#contact" ).hide();
+$( "#showContact" ).click(function() {
+$( "#contact" ).slideToggle( "slow");
+});
+$( ".hamburger" ).click(function() {
+$( "#contact" ).hide( "slow");
+});
 
-//menu closes on scroll with function below//
+//menu's close on scroll//
 $(window).scroll(function() {
 
     if ($(this).scrollTop()>0)
@@ -14,7 +21,14 @@ $(window).scroll(function() {
      }
  });
 
-//makes hamburger menu black on page2//
+$(window).scroll(function() {
+
+    if ($(this).scrollTop()>0)
+     {
+        $('#contact').fadeOut();
+     }
+ });
+//makes hamburger menu yellow on page2//
 
 $( ".hamburger" )
   .on( "mouseenter", function() {

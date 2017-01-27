@@ -45,7 +45,7 @@ body, html {
 	height: 100vh;
   z-index: -1;
 }
-
+/*** nav Section ***/
 .hamburgerDiv{
     right: 0%;
     position:fixed;
@@ -108,6 +108,22 @@ body, html {
     color: white;
     background: gray;
 }
+
+/*** contactpage Section ***/
+#contact {
+	z-index:1000000; 
+  float: right;
+  margin-top: 40px; 
+	right: 25%;
+	position:fixed; 
+	font-size:1.0em; 
+  text-align: center;
+  color: white;
+	width:50%; 
+  height: 50%;
+  background:#131313;
+	opacity: 0.8;
+	}
 
 /*** Shopping Grid Section ***/
 .shopping_container {
