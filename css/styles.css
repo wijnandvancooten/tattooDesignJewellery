@@ -103,5 +103,19 @@ body, html {
   left: 0;
   top: auto;
   margin-top: 10px;
-  background-color: #ddd;
+  background-color: #F1F1F1;
+  text-align: center;
+}
+
+.preview_img {
+  text-align: center;
+  height: 100%;
+  float: left;
+}
+
+.preview_img img {
+  height: 400px;
+  width: auto;
+  float: left;
+  display: inline-block;
 }
