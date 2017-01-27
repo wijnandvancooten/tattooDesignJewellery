@@ -1,82 +1,6 @@
 
 /*custom css for Tattoo Design Webpage*/
 /*navbar index.htm*/
-
-
-
-.jumbotron {
-	background:  url('../images/Header/Header_3.jpg');
-	-webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-    background-size: cover;;
-	height: 100vh;
-    z-index: -1;
-}
- 
-
-.hamburgerDiv{
-    right: 0%;
-    position:fixed;
-    z-index:100000;
-}
-.hamburger{
-    background:none;
-    float: right;
-    right: 0%;
-    height: 0%;
-    position:fixed;
-    padding:5px 15px 0px 15px;
-    color:white;
-    border:0;
-    font-size:1.4em;
-    font-weight:bold;
-    cursor:pointer;
-    outline:none;
-    z-index:100000;
-}
-
-.menu{
-	z-index:1000000; 
-    float: right;
-    margin-top: 20px; 
-	right: 0%;
-	position:fixed;
-	font-weight:bold; 
-	font-size:1.0em; 
-	width:140px; 
-    background:#131313;
-	opacity: 0.75;
-	}
-	
-.menu ul {
-	margin: 0; 
-	padding: 0; 
-	list-style-type: none; 
-	list-style-image: none;
-    }
-
-.menu li {
-	display: block;   
-	padding:15px 0 15px 0; 
-	border-bottom:#1d1f20 1px solid;
-    text-align:center;
-    }
-
-.menu ul li a { 
-	text-decoration:none;  
-	margin: 0px; 
-	color:#fff;
-    }
-
-.menu ul li a:hover {
-    color: white;
-    background-color: none;
-}
-
-=======
-
-
 @font-face {
   font-family: 'Anodyne';
   src: url('../fonts/Anodyne/f4258f11-b720-4398-8e6e-9d384824b6f0.eot'); /* IE9 Compat Modes */
@@ -98,6 +22,7 @@
 body, html {
   font-size: 100%;
 }
+
 /*** Jumbotron Section ***/
 #anodyne{
   font-family: "Anodyne";
@@ -112,9 +37,73 @@ body, html {
 }
 
 .jumbotron {
-	background:  url('../images/Header/Header_3.jpg') center;
-  background-size: cover;
+	background:  url('../images/Header/Header_3.jpg');
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;;
 	height: 100vh;
+  z-index: -1;
+}
+
+.hamburgerDiv{
+    right: 0%;
+    position:fixed;
+    z-index:100000;
+}
+
+.hamburger{
+    background:none;
+    float: right;
+    right: 0%;
+    height: 0%;
+    position:fixed;
+    padding:5px 15px 0px 15px;
+    color:white;
+    border:0;
+    font-size:1.4em;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:100000;
+}
+
+.menu{
+	z-index:1000000;
+  float: right;
+  margin-top: 20px;
+	right: 0%;
+	position:fixed;
+	font-weight:bold;
+	font-size:1.0em;
+	width:140px;
+  background:#131313;
+	opacity: 0.75;
+	}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+.menu li {
+	display: block;
+	padding:15px 0 15px 0;
+	border-bottom:#1d1f20 1px solid;
+  text-align:center;
+    }
+
+.menu ul li a {
+	text-decoration:none;
+	margin: 0px;
+	color:#fff;
+    }
+
+.menu ul li a:hover {
+    color: white;
+    background-color: none;
 }
 
 /*** Shopping Grid Section ***/
@@ -226,4 +215,3 @@ body, html {
     background-color: #555555;
     color: white;
 }
-
