@@ -14,3 +14,6 @@ $(window).scroll(function() {
      }
  });
 
+ //hamberger changes color when on a whit bachground//
+ 
+
