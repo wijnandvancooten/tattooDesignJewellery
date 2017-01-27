@@ -69,28 +69,15 @@ body, html {
 }
 
 .menu{
-<<<<<<< HEAD
 	z-index:1000000; 
-    float: right;
-    margin-top: 40px; 
+  float: right;
+  margin-top: 40px; 
 	right: 0%;
 	position:fixed; 
 	font-size:1.0em; 
 	width:140px; 
-    background:#131313;
-	opacity: 0.5;
-=======
-	z-index:1000000;
-  float: right;
-  margin-top: 20px;
-	right: 0%;
-	position:fixed;
-	font-weight:bold;
-	font-size:1.0em;
-	width:140px;
   background:#131313;
-	opacity: 0.75;
->>>>>>> master
+	opacity: 0.5;
 	}
 
 .menu ul {
@@ -106,20 +93,14 @@ body, html {
 	border-bottom:#1d1f20 1px solid;
   text-align:center;
     }
-<<<<<<< HEAD
+
 .menu a {
     display: block;
 }
-.menu ul li a { 
-	text-decoration:none; 
-     
-	margin: 0px; 
-=======
 
 .menu ul li a {
 	text-decoration:none;
 	margin: 0px;
->>>>>>> master
 	color:#fff;
     }
 
