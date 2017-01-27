@@ -62,6 +62,7 @@ body, html {
   height: 300px;
   opacity: 1;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .shopping_list_item > img:hover {
@@ -131,6 +132,20 @@ body, html {
   font-family: "ShoppingScript";
 }
 
-.preview_text p {
+.preview_text p:nth-child(3) {
+  font-weight: bold;
+}
 
+.preview button {
+  background-color: #F1F1F1;
+  color: black;
+  border: 2px solid #555555;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border-radius: 2px;
+}
+
+.preview button:hover  {
+    background-color: #555555;
+    color: white;
 }
