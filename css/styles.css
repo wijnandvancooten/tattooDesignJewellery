@@ -39,14 +39,13 @@
 .menu{
 	z-index:1000000; 
     float: right;
-    margin-top: 20px; 
+    margin-top: 40px; 
 	right: 0%;
-	position:fixed;
-	font-weight:bold; 
+	position:fixed; 
 	font-size:1.0em; 
 	width:140px; 
     background:#131313;
-	opacity: 0.75;
+	opacity: 0.5;
 	}
 	
 .menu ul {
@@ -62,16 +61,19 @@
 	border-bottom:#1d1f20 1px solid;
     text-align:center;
     }
-
+.menu a {
+    display: block;
+}
 .menu ul li a { 
-	text-decoration:none;  
+	text-decoration:none; 
+     
 	margin: 0px; 
 	color:#fff;
     }
 
 .menu ul li a:hover {
     color: white;
-    background-color: none;
+    background: gray;
 }
 
 =======
