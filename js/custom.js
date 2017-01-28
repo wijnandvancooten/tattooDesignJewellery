@@ -9,7 +9,7 @@ $('.addToCart').click(function() {
         console.log(names)
 });
 
-$("button.shopButton").click(function() {
+$(".shopButton").click(function() {
     $("div.switch").toggleClass("shoppingCart");
 });
 //custom.js for Tattoo Design webpage//
