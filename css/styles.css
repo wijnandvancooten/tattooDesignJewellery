@@ -195,12 +195,13 @@ body, html {
 
 .preview_text h1 {
   margin-top: 50px;
-  font-size: 100px;
+  font-size: 90px;
   font-family: "ShoppingScript";
 }
 
 .preview_text p:nth-child(3) {
   font-weight: bold;
+  margin: 30px 0;
 }
 
 .preview button {
