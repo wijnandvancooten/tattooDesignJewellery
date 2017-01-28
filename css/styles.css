@@ -131,15 +131,18 @@ body, html {
     width: 100%;
     text-align: center;
 }
-.itemList {
-  font-size: 1em;
-}
 .table {
-  width: 70%;
+  border-collapse: separate;
+  empty-cells: hide;
 }
 .table, th, td {
   padding: 10px;
-  border: 1px solid grey;
+  font-size: 1em;
+  margin: 20%;
+}
+.shoppingTable {
+  position: relative;
+  left: 15%;
 }
 
 /*** Shopping Grid Section ***/
