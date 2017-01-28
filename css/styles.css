@@ -160,10 +160,6 @@ body, html {
 
 .preview {
   display: none;
-}
-
-.example {
-  display: block;
   position: absolute;
   height: 500px;
   width: 100%;
