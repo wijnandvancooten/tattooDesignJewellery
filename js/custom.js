@@ -14,13 +14,8 @@ $(window).scroll(function() {
      }
  });
 
-<<<<<<< HEAD
+
  //hamberger changes color when on a whit bachground//
- 
-
-=======
-//makes hamburger menu black on page2//
-
 $( ".hamburger" )
   .on( "mouseenter", function() {
     $(".hamburger").css({
@@ -28,4 +23,4 @@ $( ".hamburger" )
       "font-weight": "bolder"
     });
   })
->>>>>>> master
+
