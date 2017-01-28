@@ -12,5 +12,4 @@ $('.addToCart').click(function() {
 
 $("button.shopButton").click(function() {
     $("div.switch").toggleClass("shoppingCart");
-    console.log("this button does something")
 });

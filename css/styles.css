@@ -65,6 +65,13 @@ body, html {
 .itemList {
   font-size: 1em;
 }
+.table {
+  width: 70%;
+}
+.table, th, td {
+  padding: 10px;
+  border: 1px solid grey;
+}
 
 /*** Shopping Grid Section ***/
 .shopping_container {
