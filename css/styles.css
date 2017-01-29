@@ -59,8 +59,8 @@ body, html {
     height: 0%;
     position:fixed;
     padding:5px 15px 0px 15px;
-    color:white;
-    border:0;
+    color:darkolivegreen;
+    border:1px;
     font-size:1.4em;
     font-weight:bold;
     cursor:pointer;

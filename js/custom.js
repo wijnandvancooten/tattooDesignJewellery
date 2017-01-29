@@ -42,12 +42,15 @@ $(window).scroll(function() {
         $('#contact').fadeOut();
      }
  });
+
+ 
 //makes hamburger menu yellow on page2//
 
-$( ".hamburger" )
+/*$( ".hamburger" )
   .on( "mouseenter", function() {
     $(".hamburger").css({
       "color": "yellow",
       "font-weight": "bolder"
     });
   })
+  */ 
