@@ -1,3 +1,4 @@
+//custom.js for Tattoo Design webpage//
 
 var values = ['price'];
 var names = ['product'];
@@ -12,8 +13,8 @@ $('.addToCart').click(function() {
 $(".shopButton").click(function() {
     $("div.switch").toggleClass("shoppingCart");
 });
-//custom.js for Tattoo Design webpage//
 
+/*** JS for Navigation ***/
 $( ".menu" ).hide();
 $( ".hamburger" ).click(function() {
 $( ".menu" ).slideToggle( "slow");
@@ -53,4 +54,21 @@ $(window).scroll(function() {
       "font-weight": "bolder"
     });
   })
-  */ 
+
+  /*** JS for Shopping Grid ***/
+  var currentProduct;
+
+  $('.shopping_list_item').click(function(self){
+    currentProduct = self.target;
+
+    $(self.target)
+      .parent('li')
+        .children('div.preview')
+          .addClass('example');
+
+  });
+
+  $('.preview').click(function(){
+    $(this).removeClass('example');
+  })
+
