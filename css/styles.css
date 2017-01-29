@@ -45,7 +45,7 @@ body, html {
 	height: 100vh;
   z-index: -1;
 }
-
+/*** nav Section ***/
 .hamburgerDiv{
     right: 0%;
     position:fixed;
@@ -59,8 +59,8 @@ body, html {
     height: 0%;
     position:fixed;
     padding:5px 15px 0px 15px;
-    color:white;
-    border:0;
+    color:darkolivegreen;
+    border:1px;
     font-size:1.4em;
     font-weight:bold;
     cursor:pointer;
@@ -147,6 +147,44 @@ body, html {
   padding: 10px;
   border: 1px solid grey;
 }
+
+
+/*** contactpage Section ***/
+#contact {
+	z-index:1000000; 
+  float: right;
+  margin-top: 40px; 
+	right: 25%;
+	position:fixed; 
+	font-size:1.0em; 
+  text-align: center;
+  color: white;
+	width:50%; 
+  background:#131313;
+	opacity: 0.8;
+	}
+
+.socialMedia {
+ width: 44px;
+ height: 44px;
+ background:#131313;
+ border-radius: 90px;
+ border: none;
+}
+
+.socialMedia img {
+  width: 100%;
+  height: 100%;
+  
+}
+
+.socialMedia img:hover {
+  opacity:0.8;
+  width: 105%;
+  height: 105%;
+
+}
+
 
 /*** Shopping Grid Section ***/
 .shopping_container {
