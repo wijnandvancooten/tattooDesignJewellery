@@ -136,7 +136,6 @@ body, html {
 }
 
 .sold_out {
-  cursor: pointer;
   position: relative;
   -webkit-filter: blur(4px);
 	filter: blur(4px);
@@ -149,6 +148,10 @@ body, html {
   filter: blur(0);
 }
 
+.sold_out img {
+  cursor: default;
+}
+
 .sold_out h1 {
   font-size: 40px;
   position: absolute;
@@ -156,10 +159,16 @@ body, html {
   top: 85px;
   left: 50px;
   color: #fff;
+  cursor: default;
 }
 
 .preview {
   display: none;
+}
+
+.example {
+  z-index: 1000;
+  display: block;
   position: absolute;
   height: 500px;
   width: 100%;

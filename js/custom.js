@@ -7,10 +7,18 @@ $( ".menu" ).slideToggle( "slow");
 });
 
 /*** JS for Shopping Grid ***/
-$(".shopping_list_item img").click(function(){
-  $(".preview").css({ 'display' : 'block' });
+var currentProduct;
+
+$('.shopping_list_item').click(function(self){
+  currentProduct = self.target;
+
+  $(self.target)
+    .parent('li')
+      .children('div.preview')
+        .addClass('example');
+
 });
 
-$(".preview_img").click(function(){
-  $(".preview").css({ 'display' : 'none' });
-});
+$('.preview').click(function(){
+  $(this).removeClass('example');
+})
