@@ -128,7 +128,7 @@ body, html {
   height: 300px;
   opacity: 1;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .shopping_list_item > img:hover {
