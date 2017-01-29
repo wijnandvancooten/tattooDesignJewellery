@@ -19,26 +19,37 @@
 </head>
 
 <body>
+
+<div id=page1>
+
       <!-- Jumbotron Section -->
       <div class="jumbotron">
-        <h1 id="anodyne">Tattoo <br> Design <br> Jewellery</h1>
 
         <div class="hamburgerDiv">
-          <div class="hamburgerDiv">
-            <button class="hamburger">&#9776;</button>
-          </div>
-          <div class="menu">
-            <nav class="menu">
-              <ul class="menu">
-                <li><a href="#">home</a></li>
-                <li><a href="#">webshop</a></li>
-                <li><a href="#">contact</a></li>
-                <li><a href="#">shopping cart</a></li>
-              </ul>
-            </nav>
-          </div>
+            <div>
+                <button class="hamburger">&#9776;</button>
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="#page1">home</a></li>
+                        <li><a href="#page2">webshop</a></li>
+                        <li><a href="#">contact</a></li>
+                        <li><a href="#" class = "shopButton">shopping cart</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-      </div> <!-- End of Jumbotron Section -->
+
+        <div class="font">
+          <h1 id="anodyne">Tattoo <br> Design <br> Jewellery</h1>
+          <!--<h1 id="shopping">Tattoo Design jewellery</h1>-->
+
+      </div>
+      </div>
+</div>
+<div id=page2>
+
 
   <!--Shopping Grid -->
   <div class="shopping_container"> <!-- Main div of Shopping Grid -->
@@ -132,13 +143,30 @@
             <h1>Lady in Black</h1>
             <p>Archers were a vital addition to any medieval army, and from high in the turrets, skilled bowmen were often the only hopes of holding off a violent usurping. This ring is for the sharpshooters working to prevent the siege. There may be small differences between the pictured sterling silver piece and its stainless steel counterpart. The steel pieces may have slightly less detail than the handcrafted silver version.</p>
             <p>10.99 €</p>
-            <button>Add me to your collection</button>
+            <button class="addToCart" name = "title of item" value = "10,99">Add me to your collection</button>
           </div>
         </div> <!-- End of hidden part -->
       </li>
     </ul>
   </div> <!-- End of grid container -->
+</div>
 
+<!--shoppingCart-->
+<div class="switch shoppingCart">
+  <div class="shoppingCartLook">
+      <h1 class="shoppingCartTitle">Shopping cart<h1>
+      <table>
+        <tr>
+          <th>Price</th>
+          <th>Item</th>
+        </tr>
+        <tr>
+          <td>10,99</td>
+          <td>watch</td>
+        </tr>
+      </table>
+  </div>
+</div>
 
 <script type='text/javascript' src="js/custom.js"></script>
 </body>

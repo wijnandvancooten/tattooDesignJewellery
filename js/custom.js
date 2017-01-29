@@ -1,24 +1,57 @@
 //custom.js for Tattoo Design webpage//
 
+var values = ['price'];
+var names = ['product'];
+
+$('.addToCart').click(function() {
+    names.push($(this).attr('name'));
+    values.push($(this).val());
+        console.log(values)
+        console.log(names)
+});
+
+$(".shopButton").click(function() {
+    $("div.switch").toggleClass("shoppingCart");
+});
+
 /*** JS for Navigation ***/
 $( ".menu" ).hide();
 $( ".hamburger" ).click(function() {
 $( ".menu" ).slideToggle( "slow");
 });
 
-/*** JS for Shopping Grid ***/
-var currentProduct;
+//menu closes on scroll with function below//
+$(window).scroll(function() {
 
-$('.shopping_list_item').click(function(self){
-  currentProduct = self.target;
+    if ($(this).scrollTop()>0)
+     {
+        $('.menu').fadeOut();
+     }
+ });
 
-  $(self.target)
-    .parent('li')
-      .children('div.preview')
-        .addClass('example');
+//makes hamburger menu black on page2//
 
-});
+$( ".hamburger" )
+  .on( "mouseenter", function() {
+    $(".hamburger").css({
+      "color": "yellow",
+      "font-weight": "bolder"
+    });
+  })
 
-$('.preview').click(function(){
-  $(this).removeClass('example');
-})
+  /*** JS for Shopping Grid ***/
+  var currentProduct;
+
+  $('.shopping_list_item').click(function(self){
+    currentProduct = self.target;
+
+    $(self.target)
+      .parent('li')
+        .children('div.preview')
+          .addClass('example');
+
+  });
+
+  $('.preview').click(function(){
+    $(this).removeClass('example');
+  })
