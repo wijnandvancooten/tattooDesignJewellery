@@ -168,15 +168,14 @@ body, html {
 
 .example {
   z-index: 1000;
-  display: block;
-  position: absolute;
-  height: 500px;
-  width: 100%;
-  left: 0;
-  top: auto;
-  margin-top: 10px;
-  background-color: #F1F1F1;
-  text-align: center;
+   display: block;
+   position: fixed;
+   height: 500px;
+   width: 100%;
+   left: 0;
+   top: 10%;
+   background-color: #F1F1F1;
+   text-align: center;
 }
 
 .preview_img, .preview_text {
