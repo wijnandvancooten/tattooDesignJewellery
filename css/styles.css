@@ -142,6 +142,7 @@ body, html {
   border: 1px solid grey;
 }
 
+
 /*** contactpage Section ***/
 #contact {
 	z-index:1000000; 
@@ -177,6 +178,7 @@ body, html {
   height: 105%;
 
 }
+
 
 /*** Shopping Grid Section ***/
 .shopping_container {
