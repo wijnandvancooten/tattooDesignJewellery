@@ -19,49 +19,48 @@
 </head>
 
 <body>
-
 <div id=page1>
 
-      <!-- Jumbotron Section -->
-      <div class="jumbotron">
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <div class="hamburgerDiv">
+    <div>
+      <button class="hamburger">&#9776;</button>
+    </div>
+    <div class="menu">
+      <nav>
+        <ul>
+          <li><a href="#page1">home</a></li>
+          <li><a href="#page2">webshop</a></li>
+          <li id='showContact'><a href="#contact">contact</a></li>
+          <li><a href="#" class = "shopButton">shopping cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div> <!-- End of HamburgerDiv -->
 
-        <div class="hamburgerDiv">
-            <div>
-                <button class="hamburger">&#9776;</button>
-            </div>
-            <div class="menu">
-                <nav>
-                    <ul>
-                        <li><a href="#page1">home</a></li>
-                        <li><a href="#page2">webshop</a></li>
-                        <li id='showContact'><a href="#contact">contact</a></li>
-                        <li><a href="#" class = "shopButton">shopping cart</a></li>
-                    </ul>
-                </nav>
-            </div>
+  <!-- Contact (inside Jumbotron) -->
+  <div id=contact>
+    <a href="#" class="facebook" title="Facebook"></a>
+    <a href="#" class="instagram" title="Instagram"></a>
+    <a href="#" class="email" title="Behance"></a>
+    <p>Hallo Gorgeous, want to know what we are up to? Check us out on social media. Or send us a mail.<br> for cats klick <a href="https://www.google.nl/search?q=crazy+funny+cats&espv=2&biw=1280&bih=643&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjr3Nu5v-PRAhVByRQKHZ1bBBQQ_AUIBigB#tbm=isch&q=crazy+cats" target="_blank"> <span></span> here.</a>. Enjoy!<br>
+    <button class=socialMedia><img src="images/icons/pintrest.svg"></button>
+    <button class=socialMedia><img src="images/icons/facebook.svg"></button>
+    <button class=socialMedia><img src="images/icons/pintrest.svg"></button>
+    <button class=socialMedia><img src="images/icons/mail.svg"></button>
+  </div>
 
-        </div>
-<div id=contact>
-  <a href="#" class="facebook" title="Facebook"></a>
-  <a href="#" class="instagram" title="Instagram"></a>
-  <a href="#" class="email" title="Behance"></a>
-  <p>Hallo Gorgeous, want to know what we are up to? Check us out on social media. Or send us a mail.<br> for cats klick <a href="https://www.google.nl/search?q=crazy+funny+cats&espv=2&biw=1280&bih=643&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjr3Nu5v-PRAhVByRQKHZ1bBBQQ_AUIBigB#tbm=isch&q=crazy+cats" target="_blank"> <span></span> here.</a>. Enjoy!<br>
-  <button class=socialMedia><img src="images/icons/pintrest.svg"></button>
-  <button class=socialMedia><img src="images/icons/facebook.svg"></button>
-  <button class=socialMedia><img src="images/icons/pintrest.svg"></button>
-  <button class=socialMedia><img src="images/icons/mail.svg"></button>
-</div>
-        <div class="font">
-          <h1 id="anodyne">Tattoo <br> Design <br> Jewellery</h1>
-          <!--<h1 id="shopping">Tattoo Design jewellery</h1>-->
+  <div class="font">
+    <h1 id="anodyne">Tattoo <br> Design <br> Jewellery</h1>
+    <!--<h1 id="shopping">Tattoo Design jewellery</h1>-->
+  </div>
+</div> <!-- End of Jumbotron -->
 
-          
-        </div>
-      </div>
+</div> <!-- End of Page 1 -->
 
-</div>
+
 <div id=page2>
-
 
   <!--Shopping Grid -->
   <div class="shopping_container"> <!-- Main div of Shopping Grid -->
@@ -161,12 +160,12 @@
       </li>
     </ul>
   </div> <!-- End of grid container -->
-</div>
+</div> <!-- End of Page 2 -->
 
-<!--shoppingCart-->
+<!-- ShoppingCart-->
 <div class="switch shoppingCart">
   <div class="shoppingCartLook">
-      <h1 class="shoppingCartTitle">Shopping cart<h1>
+    <h1 class="shoppingCartTitle">Shopping cart<h1>
       <table>
         <tr>
           <th>Price</th>

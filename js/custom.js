@@ -1,5 +1,5 @@
 //custom.js for Tattoo Design webpage//
-
+/*** JS for Shopping Cart ***/
 var values = ['price'];
 var names = ['product'];
 
@@ -44,7 +44,6 @@ $(window).scroll(function() {
      }
  });
 
- 
 //makes hamburger menu yellow on page2//
 
 /*$( ".hamburger" )
@@ -55,7 +54,7 @@ $(window).scroll(function() {
     });
   })
 
-  /*** JS for Shopping Grid ***/
+/*** JS for Shopping Grid ***/
   var currentProduct;
 
   $('.shopping_list_item').click(function(self){
@@ -71,4 +70,3 @@ $(window).scroll(function() {
   $('.preview').click(function(){
     $(this).removeClass('example');
   })
-
