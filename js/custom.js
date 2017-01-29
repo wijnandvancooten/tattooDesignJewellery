@@ -10,9 +10,9 @@ $('.addToCart').click(function() {
         console.log(names)
 });
 
-$(".shopButton").click(function() {
-    $("div.switch").toggleClass("shoppingCart");
-});
+//$(".shopButton").click(function() {
+//    $("div.switch").toggleClass("shoppingCart");
+//});
 
 /*** JS for Navigation ***/
 $( ".menu" ).hide();
@@ -25,6 +25,13 @@ $( "#contact" ).slideToggle( "slow");
 });
 $( ".hamburger" ).click(function() {
 $( "#contact" ).hide( "slow");
+});
+$( "#contact" ).hide();
+$( ".shopButton" ).click(function() {
+$( ".switch" ).slideToggle( "slow");
+});
+$( ".hamburger" ).click(function() {
+$( ".switch" ).hide( "slow");
 });
 
 //menu's close on scroll//
@@ -43,6 +50,15 @@ $(window).scroll(function() {
         $('#contact').fadeOut();
      }
  });
+
+$(window).scroll(function() {
+
+    if ($(this).scrollTop()>0)
+     {
+        $('.switch').fadeOut();
+     }
+ });
+ 
 
 //makes hamburger menu yellow on page2//
 
