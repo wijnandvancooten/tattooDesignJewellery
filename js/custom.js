@@ -58,17 +58,21 @@ $(window).scroll(function() {
         $('.switch').fadeOut();
      }
  });
- 
+
 
 //makes hamburger menu yellow on page2//
-
-/*$( ".hamburger" )
+/*
+$( "#page2" )
   .on( "mouseenter", function() {
     $(".hamburger").css({
       "color": "yellow",
-      "font-weight": "bolder"
+      "font-weight": "bolder",
     });
-  })
+  }) */
+/*
+$('.hamburger').getElementById('#page2'){
+  .css('color', 'black');
+};
 
 /*** JS for Shopping Grid ***/
   var currentProduct;
