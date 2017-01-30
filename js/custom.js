@@ -65,8 +65,7 @@ $(window).scroll(function() {
 
   if ($(window).scrollTop() >= navColor){
     $('.hamburger')
-      .css('color','black')
-      .css('')
+      .css('color','black') 
   }
   else{
     $('.hamburger')
