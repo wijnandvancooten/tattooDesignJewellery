@@ -134,15 +134,31 @@ body, html {
   width: 100%;
   text-align:center;
 }
+<<<<<<< HEAD
+=======
+
+.itemList {
+  font-size: 1em;
+}
+
+>>>>>>> origin/master
 .table {
   border-collapse: separate;
   empty-cells: hide;
   position: relative;
   left: 15%;
 }
+<<<<<<< HEAD
 .table, th, td {
   font-size: 1em;
   margin: 20%;
+=======
+
+th, td {
+  padding: 0px;
+  border: 1px solid grey;
+  font-size: 22px;
+>>>>>>> origin/master
   text-align: center;
   width: 25%;
 }
