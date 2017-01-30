@@ -59,7 +59,6 @@ $(window).scroll(function() {
      }
  });
 
-// switch hamburger color when enter page2
  var navColor = $('#page2').offset().top - 100;
 
  function logScroll(){
@@ -74,6 +73,8 @@ $(window).scroll(function() {
      .css ('color','white')
   }
  }
+
+ window.onscroll = logScroll;
 
 /*** JS for Shopping Grid ***/
   var currentProduct;
