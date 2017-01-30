@@ -59,20 +59,21 @@ $(window).scroll(function() {
      }
  });
 
+// switch hamburger color when enter page2
+ var navColor = $('#page2').offset().top - 100;
 
-//makes hamburger menu yellow on page2//
-/*
-$( "#page2" )
-  .on( "mouseenter", function() {
-    $(".hamburger").css({
-      "color": "yellow",
-      "font-weight": "bolder",
-    });
-  }) */
-/*
-$('.hamburger').getElementById('#page2'){
-  .css('color', 'black');
-};
+ function logScroll(){
+
+  if ($(window).scrollTop() >= navColor){
+    $('.hamburger')
+      .css('color','black')
+      .css('')
+  }
+  else{
+    $('.hamburger')
+     .css ('color','white')
+  }
+ }
 
 /*** JS for Shopping Grid ***/
   var currentProduct;
