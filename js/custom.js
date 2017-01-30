@@ -10,10 +10,6 @@ $('.addToCart').click(function() {
         console.log(names)
 });
 
-//$(".shopButton").click(function() {
-//    $("div.switch").toggleClass("shoppingCart");
-//});
-
 /*** JS for Navigation ***/
 $( ".menu" ).hide();
 $( ".hamburger" ).click(function() {
