@@ -1,6 +1,6 @@
 
-/*custom css for Tattoo Design Webpage*/
-/*navbar index.htm*/
+/* Custom CSS for Tattoo Design Webpage*/
+/* FONTS */
 @font-face {
   font-family: 'Anodyne';
   src: url('../fonts/Anodyne/f4258f11-b720-4398-8e6e-9d384824b6f0.eot'); /* IE9 Compat Modes */
@@ -45,37 +45,37 @@ body, html {
 	height: 100vh;
   z-index: -1;
 }
-
+/*** Navigation Section ***/
 .hamburgerDiv{
-    right: 0%;
-    position:fixed;
-    z-index:100000;
+  right: 0%;
+  position:fixed;
+  z-index:100000;
 }
 
 .hamburger{
-    background:none;
-    float: right;
-    right: 3%;
-    height: 0%;
-    position:fixed;
-    padding:5px 15px 0px 15px;
-    color:white;
-    border:0;
-    font-size:1.4em;
-    font-weight:bold;
-    cursor:pointer;
-    outline:none;
-    z-index:100000;
+  background:none;
+  float: right;
+  right: 3%;
+  height: 0%;
+  position:fixed;
+  padding:5px 15px 0px 15px;
+  color:darkolivegreen;
+  border:1px;
+  font-size:1.4em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:100000;
 }
 
 .menu{
-	z-index:1000000; 
+	z-index:1000000;
   float: right;
-  margin-top: 40px; 
+  margin-top: 40px;
 	right: 0%;
-	position:fixed; 
-	font-size:1.0em; 
-	width:140px; 
+	position:fixed;
+	font-size:1.0em;
+	width:140px;
   background:#131313;
 	opacity: 0.5;
 	}
@@ -92,57 +92,95 @@ body, html {
 	padding:15px 0 15px 0;
 	border-bottom:#1d1f20 1px solid;
   text-align:center;
-    }
+}
 
 .menu a {
-    display: block;
+  display: block;
 }
 
 .menu ul li a {
 	text-decoration:none;
 	margin: 0px;
 	color:#fff;
-    }
+}
 
 .menu ul li a:hover {
-    color: white;
-    background: gray;
+  color: white;
+  background: gray;
 }
-/*** shopping cart***/
+
+/*** Shopping Cart Section***/
 .shoppingCart {
   display: none;
 }
+
 .shoppingCartLook {
   position: fixed;
-  left:10%;
+  left:15%;
   top:10%;
-  right:10%;
+  right:15%;
   bottom:10%;
   z-index: 3;
   border: 4px solid black;
   background: black;
   opacity: 0.9;
 }
+
 .shoppingCartTitle {
-    font-size: 3.5em;
-    position: relative;
-    left: 0;
-    top: 10%;
-    width: 100%;
-    text-align: center;
+  font-size: 3.5em;
+  position: relative;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  text-align:center;
 }
 .table {
   border-collapse: separate;
   empty-cells: hide;
-}
-.table, th, td {
-  padding: 10px;
-  font-size: 1em;
-  margin: 20%;
-}
-.shoppingTable {
   position: relative;
   left: 15%;
+}
+.table, th, td {
+  font-size: 1em;
+  margin: 20%;
+  text-align: center;
+  width: 25%;
+}
+
+/*** Contact Section ***/
+#contact {
+	z-index:1000000;
+  float: right;
+  margin-top: 40px;
+	right: 25%;
+	position:fixed;
+	font-size:1.0em;
+  text-align: center;
+  color: white;
+	width:50%;
+  background:#131313;
+	opacity: 0.8;
+}
+
+.socialMedia {
+ width: 44px;
+ height: 44px;
+ background:#131313;
+ border-radius: 90px;
+ border: none;
+}
+
+.socialMedia img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.socialMedia img:hover {
+  opacity:0.8;
+  width: 105%;
+  height: 105%;
+
 }
 
 /*** Shopping Grid Section ***/
@@ -167,7 +205,7 @@ body, html {
   height: 300px;
   opacity: 1;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .shopping_list_item > img:hover {
@@ -175,7 +213,6 @@ body, html {
 }
 
 .sold_out {
-  cursor: pointer;
   position: relative;
   -webkit-filter: blur(4px);
 	filter: blur(4px);
@@ -188,6 +225,10 @@ body, html {
   filter: blur(0);
 }
 
+.sold_out img {
+  cursor: default;
+}
+
 .sold_out h1 {
   font-size: 40px;
   position: absolute;
@@ -195,6 +236,7 @@ body, html {
   top: 85px;
   left: 50px;
   color: #fff;
+  cursor: default;
 }
 
 .preview {
@@ -202,15 +244,15 @@ body, html {
 }
 
 .example {
-  display: block;
-  position: absolute;
-  height: 500px;
-  width: 100%;
-  left: 0;
-  top: auto;
-  margin-top: 10px;
-  background-color: #F1F1F1;
-  text-align: center;
+  z-index: 1000;
+   display: block;
+   position: fixed;
+   height: 500px;
+   width: 100%;
+   left: 0;
+   top: 10%;
+   background-color: #F1F1F1;
+   text-align: center;
 }
 
 .preview_img, .preview_text {
@@ -229,16 +271,18 @@ body, html {
   float: left;
   display: inline-block;
   margin: 50px 0 50px 50px;
+  cursor: default;
 }
 
 .preview_text h1 {
   margin-top: 50px;
-  font-size: 100px;
+  font-size: 90px;
   font-family: "ShoppingScript";
 }
 
 .preview_text p:nth-child(3) {
   font-weight: bold;
+  margin: 30px 0;
 }
 
 .preview button {
