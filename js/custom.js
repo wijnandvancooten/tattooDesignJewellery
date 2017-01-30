@@ -10,10 +10,6 @@ $('.addToCart').click(function() {
         console.log(names)
 });
 
-//$(".shopButton").click(function() {
-//    $("div.switch").toggleClass("shoppingCart");
-//});
-
 /*** JS for Navigation ***/
 $( ".menu" ).hide();
 $( ".hamburger" ).click(function() {
@@ -58,7 +54,7 @@ $(window).scroll(function() {
         $('.switch').fadeOut();
      }
  });
- 
+
 
 //makes hamburger menu yellow on page2//
 
