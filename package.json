@@ -1,0 +1,25 @@
+{
+  "name": "tatoodesignjewellery",
+  "version": "1.0.0",
+  "description": "## What to do",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wijnandvancooten/tattooDesignJewellery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wijnandvancooten/tattooDesignJewellery/issues"
+  },
+  "homepage": "https://github.com/wijnandvancooten/tattooDesignJewellery#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "pug": "^2.0.0-beta11",
+    "sequelize": "^3.30.2"
+  }
+}
