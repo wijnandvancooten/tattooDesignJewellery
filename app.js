@@ -24,11 +24,11 @@ const db = new sequelize( 'webshop', process.env.POSTGRES_USER, process.env.POST
 
 // define all the tables in the database
 const user = db.define( 'user', {
-    firstname: sequelize.STRING,
-    lastname: sequelize.STRING,
-    address: sequelize.STRING,
-    password: sequelize.STRING,
-    email: sequelize.STRING
+    firstname: { type: sequelize.STRING, allowNull: false },
+    lastname: { type: sequelize.STRING, allowNull: false },
+    address: { type: sequelize.STRING, allowNull: false },
+    password: { type: sequelize.STRING, allowNull: false },
+    email: { type: sequelize.STRING, allowNull: false, isEmail: true  }
 } )
 
 const product = db.define( 'product', {
@@ -46,8 +46,8 @@ const order = db.define( 'order', {
 } )
 
 const comment = db.define( 'comment', {
-    name: sequelize.STRING,
-    comment: sequelize.STRING
+    name: { type: sequelize.STRING, allowNull: false },
+    comment: { type: sequelize.STRING, allowNull: false }
 } )
 
 user.hasMany( order )
@@ -64,3 +64,5 @@ app.get('/', (req, res) =>{
 app.listen(3000, function() {
     console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')
 })
+
+db.sync( { force: false} )
