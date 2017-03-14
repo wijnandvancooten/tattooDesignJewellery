@@ -47,7 +47,7 @@ const order = db.define( 'order', {
 
 const comment = db.define( 'comment', {
     name: { type: sequelize.STRING, allowNull: false },
-    comment: { type: sequelize.STRING, allowNull: false }
+    content: { type: sequelize.STRING, allowNull: false }
 } )
 
 user.hasMany( order )
@@ -66,3 +66,25 @@ app.listen(3000, function() {
 })
 
 db.sync( { force: false} )
+.then( f => {
+    console.log( 'Table created!' )
+      return Promise.all( [
+				user.create( {
+	    		firstname: "Mike",
+                lastname: "Michaelson",
+                address: "some street 123",
+	    		password: "213jkdas8eqwa",
+	            email: "mike123@asd.com"
+				} ),
+				user.create( {
+					firstname: "Ernst",
+                    lastname: "Blofeld",
+                    address: "somewhere in a mountain",
+					password: "einfach",
+					email: "ernsteinfach@huhu.com"
+				})
+			])
+  })
+		.catch( err => {
+		    console.log('An error occured: ' + err)
+	     } )
