@@ -5,6 +5,7 @@ const pug = require('pug')
 const sequelize = require('sequelize')
 const sg = require('sendgrid')(process.env.SENDGRID_API_KEY)
 const mailer = require('sendgrid-mailer').config(process.env.SENDGRID_API_KEY)
+const email = require( __dirname + '/modules/order-mail.js')
 
 const app = express()
 //database parameters
@@ -59,21 +60,10 @@ product.belongsTo( order )
 product.hasMany( comment )
 comment.belongsTo( product )
 
-//Create email data
-const email = {
-  to: 'svenjaschaefer@gmail.com', // try to use dynamic user
-  from: 'svenjaschaefer@gmail.com', //set default email sender
-  subject: 'Your Tattoo Jewellery is on it"s way to YOU',
-  text: 'Hello plain world!', //default text
-  html: '<p>Hello HTML world!</p>', // create template
-};
-
-// Send away (need to set up in shoppingcart)
-mailer.send(email); //Returns promise
-
-
 app.get('/', (req, res) =>{
   res.render('application')
+  // Send away (need to set up in shoppingcart)
+  //  mailer.send(email); //Returns promise
 })
 
 app.listen(3000, function() {
