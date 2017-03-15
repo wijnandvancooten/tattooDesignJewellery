@@ -3,7 +3,7 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     pug = require('pug'),
     sequelize = require('sequelize'),
-    passport = require('passport'),
+    //passport = require('passport'),
     session = require('express-session')
 
 const app = express()
@@ -11,10 +11,10 @@ const app = express()
 const db = require( __dirname + '/modules/db' )
 
 //API keys and Passport configuration.
-const passportConfig = require('./config/passport');
+//const passport = require('./config/passport');
 
-app.use(passport.initialize());
-app.use(passport.session());
+//app.use(passport.initialize());
+//app.use(passport.session());
 
 //setting the session
 app.use(session({
@@ -41,13 +41,32 @@ app.get('/', (req, res) =>{
   res.render('application')
 })
 
-app.post('/login', (req, res)=>{
-  passport.authenticate('local', {failureRedirect: '/login'}),
-  (req, res) => {
-    //we need to determen where to redirect to. It will be the payment page
-    res.redirect('/')
-  }
+//login post for users. checks data in database and compares it to the input form the body
+app.post('/login', (req, res) => {
+    console.log('info in body: ', req.body.email)
+    console.log("user is: ", db.user)
+    //console.log('username: ' + username + ' password: ' + password)
+    db.user.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(user => {
+      console.log('what is user in the .then ', user)
+        if (user.password == req.body.password) {
+            //console.log ('loged in: ' + req.body.username)
+            console.log('session before', req.session)
+            //sets the session visited to true after login
+            req.session.visited = true
+            //stores the users data in the session after login. Data can be uses in dashboard
+            req.session.user = user
+            res.redirect('/')
+            console.log('session after', req.session)
+        } else {
+            res.render('wronglogin')
+        }
+    })
 })
+
 
 app.listen(3000, function() {
     console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')
