@@ -55,10 +55,10 @@ html
             |
             button.socialMedia
               img(src='images/icons/mail.svg')
-        #paybutton
+        #login
           .page-header
             h3 continue with
-          form.form-horizontal(method='POST')
+          form.form-horizontal(method='POST', action='/login')
             input(type='hidden', name='_csrf', value=_csrf)
             .form-group
               label.col-sm-3.control-label(for='email') Email
@@ -200,5 +200,5 @@ html
             p U have all u want?
           div
             li#showPayPage
-              a(href='#paybutton') next
+              a(href='#login') next
     script(type='text/javascript', src='js/custom.js')

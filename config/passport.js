@@ -1,32 +1,34 @@
 const _ = require('lodash');
 const passport = require('passport');
 const request = require('request');
+const LocalStrategy = require('passport-local').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const OpenIDStrategy = require('passport-openid').Strategy;
 const OAuthStrategy = require('passport-oauth').OAuthStrategy;
 const OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 
-//requers de database module
-const User = require('../models/User');
+//requires de database module
+const db = require( __dirname + '/../modules/db' )
 
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  //added db. to user.id to aces the database
+  done(null, db.user.id);
 });
 
 passport.deserializeUser((id, done) => {
-  User.findById(id, (err, user) => {
+  db.user.findById(id, (err, user) => {
     done(err, user);
   });
 });
 
 //Sign in using Email and Password.
 passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
-  User.findOne({ email: email.toLowerCase() }, (err, user) => {
+  db.user.findOne({ email: email.toLowerCase() }, (err, user) => {
     if (err) { return done(err); }
     if (!user) {
       return done(null, false, { msg: `Email ${email} not found.` });
     }
-    user.comparePassword(password, (err, isMatch) => {
+    db.user.comparePassword(password, (err, isMatch) => {
       if (err) { return done(err); }
       if (isMatch) {
         return done(null, user);
@@ -60,13 +62,13 @@ passport.use(new FacebookStrategy({
   passReqToCallback: true
 }, (req, accessToken, refreshToken, profile, done) => {
   if (req.user) {
-    User.findOne({ facebook: profile.id }, (err, existingUser) => {
+    db.user.findOne({ facebook: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
         req.flash('errors', { msg: 'There is already a Facebook account that belongs to you. Sign in with that account or delete it, then link it with your current account.' });
         done(err);
       } else {
-        User.findById(req.user.id, (err, user) => {
+        db.user.findById(req.user.id, (err, user) => {
           if (err) { return done(err); }
           user.facebook = profile.id;
           user.tokens.push({ kind: 'facebook', accessToken });
@@ -81,12 +83,12 @@ passport.use(new FacebookStrategy({
       }
     });
   } else {
-    User.findOne({ facebook: profile.id }, (err, existingUser) => {
+    db.user.findOne({ facebook: profile.id }, (err, existingUser) => {
       if (err) { return done(err); }
       if (existingUser) {
         return done(null, existingUser);
       }
-      User.findOne({ email: profile._json.email }, (err, existingEmailUser) => {
+      db.user.findOne({ email: profile._json.email }, (err, existingEmailUser) => {
         if (err) { return done(err); }
         if (existingEmailUser) {
           req.flash('errors', { msg: 'There is already an account using this email address. Sign in to that account and link it with Facebook manually from Account Settings.' });

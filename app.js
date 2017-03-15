@@ -10,13 +10,11 @@ const app = express()
 //import database
 const db = require( __dirname + '/modules/db' )
 
-app.use( 'modules/db', db )
-
 //API keys and Passport configuration.
 const passportConfig = require('./config/passport');
-//
-// app.use(passport.initialize());
-// app.use(passport.session());
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 //setting the session
 app.use(session({
@@ -43,12 +41,17 @@ app.get('/', (req, res) =>{
   res.render('application')
 })
 
-app.listen(3000, function() {
-    console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')
-<<<<<<< HEAD
+app.post('/login', (req, res)=>{
+  passport.authenticate('local', {failureRedirect: '/login'}),
+  (req, res) => {
+    //we need to determen where to redirect to. It will be the payment page
+    res.redirect('/')
+  }
 })
 
-db.sync( { force: false} )
-=======
+app.listen(3000, function() {
+    console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')
+
 })
->>>>>>> master
+
+//db.sync( { force: false} )

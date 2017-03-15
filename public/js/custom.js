@@ -56,10 +56,10 @@ $("#contact").hide();
 $(".shopButton").click(function() {
     $(".switch").slideToggle("slow")
 })
-$("#paybutton").hide();
+$("#login").hide();
 $("#showPayPage").click(function() {
     $(".switch").hide("slow")
-    $("#paybutton").slideToggle("slow")
+    $("#login").slideToggle("slow")
 })
 $(".hamburger").click(function() {
     $(".switch").hide("slow")
