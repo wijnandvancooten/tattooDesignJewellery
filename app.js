@@ -3,14 +3,34 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const pug = require('pug')
 const sequelize = require('sequelize')
-const sg = require('sendgrid')(process.env.SENDGRID_API_KEY)
 const mailer = require('sendgrid-mailer').config(process.env.SENDGRID_API_KEY)
-const email = require( __dirname + '/modules/order-mail.js')
+const session = require('express-session')
 
 const app = express()
-//database parameters
+//import database
+const db = require( __dirname + '/modules/db' )
+const sg = require('sendgrid')(process.env.SENDGRID_API_KEY)
+const email = require( __dirname + '/modules/order-mail.js')
 
-// set the public folder
+
+//API keys and Passport configuration.
+//const passport = require('./config/passport');
+
+//app.use(passport.initialize());
+//app.use(passport.session());
+
+//setting the session
+app.use(session({
+    secret: 'salad gelore',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: false,
+        maxAge: 1000 * 60 * 60
+    }
+}))
+
+//setting the public folder
 app.use(express.static('public'))
 
 //sets the view engine to pug. pug renders the html page//
@@ -19,77 +39,39 @@ app.set('view engine', 'pug')
 // use body-parser
 app.use( bodyParser.urlencoded( { extended:false} ) )
 
-// make the database
-const db = new sequelize( 'webshop', process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
-  host: 'localhost',
-  dialect: 'postgres'
-} )
-
-// define all the tables in the database
-const user = db.define( 'user', {
-  firstname: { type: sequelize.STRING, allowNull: false },
-  lastname: { type: sequelize.STRING, allowNull: false },
-  address: { type: sequelize.STRING, allowNull: false },
-  password: { type: sequelize.STRING, allowNull: false },
-  email: { type: sequelize.STRING, allowNull: false, isEmail: true  }
-} )
-
-const product = db.define( 'product', {
-  name: sequelize.STRING,
-  description: sequelize.STRING,
-  price: sequelize.FLOAT,
-  stock: sequelize.INTEGER,
-  image: sequelize.STRING
-} )
-
-const order = db.define( 'order', {
-  ordernumber: sequelize.INTEGER,
-  amount: sequelize.INTEGER,
-  totalprice: sequelize.FLOAT
-} )
-
-const comment = db.define( 'comment', {
-  name: { type: sequelize.STRING, allowNull: false },
-  content: { type: sequelize.STRING, allowNull: false }
-} )
-
-user.hasMany( order )
-order.belongsTo( user )
-order.hasMany( product )
-product.belongsTo( order )
-product.hasMany( comment )
-comment.belongsTo( product )
-
 app.get('/', (req, res) =>{
   res.render('application')
   // Send away (need to set up in shoppingcart)
   //  mailer.send(email); //Returns promise
 })
 
+//login post for users. checks data in database and compares it to the input form the body
+app.post('/login', (req, res) => {
+    console.log('info in body: ', req.body.email)
+    console.log("user is: ", db.user)
+    //console.log('username: ' + username + ' password: ' + password)
+    db.user.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(user => {
+      console.log('what is user in the .then ', user)
+        if (user.password == req.body.password) {
+            //console.log ('loged in: ' + req.body.username)
+            console.log('session before', req.session)
+            //sets the session visited to true after login
+            req.session.visited = true
+            //stores the users data in the session after login. Data can be uses in dashboard
+            req.session.user = user
+            res.redirect('/')
+            console.log('session after', req.session)
+        } else {
+            res.render('wronglogin')
+        }
+    })
+})
+
+
 app.listen(3000, function() {
   console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')
 })
-
-db.sync( { force: false} )
-.then( f => {
-  console.log( 'Table created!' )
-  return Promise.all( [
-    user.create( {
-      firstname: "Mike",
-      lastname: "Michaelson",
-      address: "some street 123",
-      password: "213jkdas8eqwa",
-      email: "mike123@asd.com"
-    } ),
-    user.create( {
-      firstname: "Ernst",
-      lastname: "Blofeld",
-      address: "somewhere in a mountain",
-      password: "einfach",
-      email: "ernsteinfach@huhu.com"
-    })
-  ])
-})
-.catch( err => {
-  console.log('An error occured: ' + err)
-} )
