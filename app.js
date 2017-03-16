@@ -2,8 +2,9 @@
 const express = require('express'),
     bodyParser = require('body-parser'),
     pug = require('pug'),
-    sequelize = require('sequelize')
+    sequelize = require('sequelize'),
     session = require( 'express-session' )
+
 
 const app = express()
 //import database
@@ -71,7 +72,7 @@ app.post('/login', (req, res) => {
             res.render('wronglogin')
         }
     }).then( apiresponse => {
-      res.redirect('/')
+      //res.redirect('/payment')
       console.log('session after', req.session.user)
     } ).catch( err => {
       console.log('Sendgrid errored with ', err)
@@ -91,7 +92,7 @@ app.post('/register', (req, res) => {
     //console.log(newUser)
     //creats a new user in the table users.
     db.user.create(newUser)
-    res.redirect('/')
+    //res.redirect('/payment')
 })
 
 app.post( '/application', ( req, res ) => {

@@ -34,7 +34,7 @@ db.order = db.conn.define( 'order', {
 
 db.comment = db.conn.define( 'comment', {
   name: { type: sequelize.STRING, allowNull: false },
-  content: { type: sequelize.STRING, allowNull: false 
+  content: { type: sequelize.STRING, allowNull: false}
 } )
 
 db.user.hasMany( db.order )
@@ -43,7 +43,7 @@ db.order.hasMany( db.product )
 db.product.hasMany( db.comment )
 db.comment.belongsTo( db.product )
 
-db.conn.sync( { force: true} )
+db.conn.sync( { force: false} )
 .then( f => {
     console.log( 'Table created!' )
         return Promise.all( [
