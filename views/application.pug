@@ -79,7 +79,6 @@ html
                 | Sign in with Facebook
           form.form-horizontal( action="/register", method="post" )
             form.form-horizontal(method='POST', action='/register')
-              input(type='hidden', name='_csrf', value=_csrf)
               .form-group
                 label.col-sm-3.control-label(for='firstname') Firstname
                 .col-sm-7
@@ -91,7 +90,7 @@ html
               .form-group
                 label.col-sm-3.control-label(for='address') Address
                 .col-sm-7
-                  input.form-control(type='text', name='Address', id='address', placeholder='Adress', required)
+                  input.form-control(type='text', name='address', id='address', placeholder='Address', required)
               .form-group
                 label.col-sm-3.control-label(for='email') Email
                 .col-sm-7
