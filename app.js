@@ -3,14 +3,12 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const pug = require('pug')
 const sequelize = require('sequelize')
-const mailer = require('sendgrid-mailer').config(process.env.SENDGRID_API_KEY)
 const session = require('express-session')
 
 const app = express()
 //import database
 const db = require( __dirname + '/modules/db' )
-const sg = require('sendgrid')(process.env.SENDGRID_API_KEY)
-const email = require( __dirname + '/modules/order-mail.js')
+const mail = require( __dirname + '/modules/emails.js' )
 
 
 //API keys and Passport configuration.
@@ -41,8 +39,6 @@ app.use( bodyParser.urlencoded( { extended:false} ) )
 
 app.get('/', (req, res) =>{
   res.render('application')
-  // Send away (need to set up in shoppingcart)
-  //  mailer.send(email); //Returns promise
 })
 
 //login post for users. checks data in database and compares it to the input form the body
@@ -63,12 +59,18 @@ app.post('/login', (req, res) => {
             req.session.visited = true
             //stores the users data in the session after login. Data can be uses in dashboard
             req.session.user = user
-            res.redirect('/')
-            console.log('session after', req.session)
+            // Send away (need to set up in shoppingcart)
+            return mail( user, 'Order done yay', 'This is awesome' )
+
         } else {
             res.render('wronglogin')
         }
-    })
+    }).then( apiresponse => {
+      res.redirect('/')
+      console.log('session after', req.session.user)
+    } ).catch( err => {
+      console.log('Sendgrid errored with ', err)
+    } )
 })
 
 

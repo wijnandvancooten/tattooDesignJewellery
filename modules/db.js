@@ -61,7 +61,7 @@ db.conn.sync( { force: true} )
       lastname: "Blofeld",
       address: "somewhere in a mountain",
       password: "einfach",
-      email: "ernsteinfach@huhu.com"
+      email: "svenjaschaefer@gmail.com"
     } )
   ] )
 } ).then( f => {
