@@ -1,14 +1,15 @@
 //required packages for the app//
-const express = require('express')
-const bodyParser = require('body-parser')
-const pug = require('pug')
-const sequelize = require('sequelize')
-const session = require('express-session')
+const express = require('express'),
+    bodyParser = require('body-parser'),
+    pug = require('pug'),
+    sequelize = require('sequelize')
+    session = require( 'express-session' )
 
 const app = express()
 //import database
 const db = require( __dirname + '/modules/db' )
 const mail = require( __dirname + '/modules/emails.js' )
+
 
 
 //API keys and Passport configuration.
@@ -24,7 +25,7 @@ app.use(session({
     saveUninitialized: true,
     cookie: {
         secure: false,
-        maxAge: 1000 * 60 * 60
+        maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }))
 
@@ -92,6 +93,23 @@ app.post('/register', (req, res) => {
     db.user.create(newUser)
     res.redirect('/')
 })
+
+app.post( '/application', ( req, res ) => {
+    console.log( 'someone is trying to buy something' )
+    console.log( req.session.order )
+    if ( req.session.order ) {
+        console.log( 'the order in the current session is: ', req.session.order )
+        console.log( 'session still on? ', req.session.order )
+        req.session.order.push(req.body.itemname)
+        res.render( 'application', {order: req.session.order} )
+    } else {
+        console.log( 'let us get this order started' )
+        console.log( 'is this the product name?', req.body, req.body.itemname )
+        req.session.order = [ req.body.itemname  ]
+        console.log( req.session.order )
+        res.render( 'application', {order: req.session.order} )
+        }
+} )
 
 app.listen(3000, function() {
   console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')
