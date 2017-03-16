@@ -40,33 +40,16 @@ app.post( '/application', ( req, res ) => {
     console.log( req.session.order )
     if ( req.session.order ) {
         console.log( 'the order in the current session is: ', req.session.order )
-        db.product.findOne( {
-            where: {
-                name: req.body.itemname
-            }
-        } ).then( clickeditem => {
-        db.order.findOne( {
-            where: {
-                id: req.session.order.id
-            }, include : [
-                { model: clickeditem }
-            ]
-        } ) } ).then( neworder => {
-            req.session.order = neworder
-            res.render( 'application', {order: neworder} )
-        } )
+        console.log( 'session still on? ', req.session.order )
+        req.session.order.push(req.body.itemname)
+        res.render( 'application', {order: req.session.order} )
     } else {
         console.log( 'let us get this order started' )
         console.log( 'is this the product name?', req.body, req.body.itemname )
-         db.product.findOne( {
-            where: {
-                name: req.body.itemname
-            }
-        } ).then( clickedItem => {  
-        req.session.order = [ clickedItem ]
+        req.session.order = [ req.body.itemname  ]
         console.log( req.session.order )
         res.render( 'application', {order: req.session.order} )
-    } ) }
+        }
 } )
 
 app.listen(3000, function() {
