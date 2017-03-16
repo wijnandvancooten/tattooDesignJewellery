@@ -35,10 +35,14 @@ app.use(express.static('public'))
 app.set('view engine', 'pug')
 
 // use body-parser
-app.use( bodyParser.urlencoded( { extended:false} ) )
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
 
-app.get('/', (req, res) =>{
-  res.render('application')
+
+// make the database
+app.get('/', (req, res) => {
+    res.render('application')
 })
 
 //login post for users. checks data in database and compares it to the input form the body
@@ -51,7 +55,7 @@ app.post('/login', (req, res) => {
             email: req.body.email
         }
     }).then(user => {
-      console.log('what is user in the .then ', user)
+        console.log('what is user in the .then ', user)
         if (user.password == req.body.password) {
             //console.log ('loged in: ' + req.body.username)
             console.log('session before', req.session)
@@ -73,6 +77,21 @@ app.post('/login', (req, res) => {
     } )
 })
 
+app.post('/register', (req, res) => {
+    //console.log(req.body)
+    //makes a varible newUser with the user data form the inputfields in HTML
+    let newUser = {
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        address: req.body.address,
+        email: req.body.email,
+        password: req.body.password
+    }
+    //console.log(newUser)
+    //creats a new user in the table users.
+    db.user.create(newUser)
+    res.redirect('/')
+})
 
 app.listen(3000, function() {
   console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')
