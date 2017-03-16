@@ -147,6 +147,25 @@ body, html {
   width: 25%;
 }
 
+#paybutton {
+	z-index:1000000;
+  float: right;
+  margin-top: 40px;
+	right: 10%;
+	position:fixed;
+	font-size:1.0em;
+  text-align: center;
+  color: white;
+	width:80%;
+  height: 80%;
+  background:#131313;
+	opacity: 0.8;
+}
+
+#paybutton h2, h1 {
+  font-family: "ShoppingScript";
+}
+
 /*** Contact Section ***/
 #contact {
 	z-index:1000000;

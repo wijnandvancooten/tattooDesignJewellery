@@ -11,28 +11,30 @@ db.conn = new sequelize( 'webshop', process.env.POSTGRES_USER, process.env.POSTG
 
 // define all the tables in the database
 db.user = db.conn.define( 'user', {
-    firstname: { type: sequelize.STRING, allowNull: false },
-    lastname: { type: sequelize.STRING, allowNull: false },
-    address: { type: sequelize.STRING, allowNull: false },
-    password: { type: sequelize.STRING, allowNull: false },
-    email: { type: sequelize.STRING, allowNull: false, isEmail: true  }
+  firstname: { type: sequelize.STRING, allowNull: false },
+  lastname: { type: sequelize.STRING, allowNull: false },
+  address: { type: sequelize.STRING, allowNull: false },
+  password: { type: sequelize.STRING, allowNull: false },
+  email: { type: sequelize.STRING, allowNull: false, isEmail: true  }
 } )
 
 db.product = db.conn.define( 'product', {
-    name: sequelize.STRING,
-    description: sequelize.TEXT,
-    price: sequelize.FLOAT,
-    stock: sequelize.INTEGER,
-    image: sequelize.STRING
+  name: sequelize.STRING,
+  description: sequelize.TEXT,
+  price: sequelize.FLOAT,
+  stock: sequelize.INTEGER,
+  image: sequelize.STRING
 } )
 
 db.order = db.conn.define( 'order', {
-    ordernumber: sequelize.INTEGER
+  ordernumber: sequelize.INTEGER,
+  amount: sequelize.INTEGER,
+  totalprice: sequelize.FLOAT
 } )
 
 db.comment = db.conn.define( 'comment', {
-    name: { type: sequelize.STRING, allowNull: false },
-    content: { type: sequelize.STRING, allowNull: false }
+  name: { type: sequelize.STRING, allowNull: false },
+  content: { type: sequelize.STRING, allowNull: false 
 } )
 
 db.user.hasMany( db.order )
