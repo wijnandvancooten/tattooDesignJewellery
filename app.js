@@ -37,33 +37,36 @@ app.get('/', (req, res) =>{
 
 app.post( '/application', ( req, res ) => {
     console.log( 'someone is trying to buy something' )
+    console.log( req.session.order )
     if ( req.session.order ) {
         console.log( 'the order in the current session is: ', req.session.order )
+        db.product.findOne( {
+            where: {
+                name: req.body.itemname
+            }
+        } ).then( clickeditem => {
         db.order.findOne( {
             where: {
                 id: req.session.order.id
             }, include : [
-                { model: db.product.findOne( {
-                    where: {
-                        name: req.params.name
-                    }
-                } ) }
+                { model: clickeditem }
             ]
-        })
-    } else
-        console.log( 'let us get this order started' )
-        db.order.create( {
-            ordernumber: Math.floor((Math.random() * 9999) + 1000)
-        , include: [
-            { model: db.product.findOne( {
-                where: {
-                    name: req.params.name
-                }
-            } ) } 
-        ] } ).then( neworder => {
+        } ) } ).then( neworder => {
             req.session.order = neworder
             res.render( 'application', {order: neworder} )
-        } ).catch(console.log.bind(console))
+        } )
+    } else {
+        console.log( 'let us get this order started' )
+        console.log( 'is this the product name?', req.body, req.body.itemname )
+         db.product.findOne( {
+            where: {
+                name: req.body.itemname
+            }
+        } ).then( clickedItem => {  
+        req.session.order = [ clickedItem ]
+        console.log( req.session.order )
+        res.render( 'application', {order: req.session.order} )
+    } ) }
 } )
 
 app.listen(3000, function() {

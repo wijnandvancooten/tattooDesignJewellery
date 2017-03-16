@@ -76,8 +76,9 @@ html
                   | This substantial bracelet straps on with the force of a prison shackle. The only difference is you won&rsquo;t be fighting to take it off any time soon. There may be small differences between the pictured sterling silver piece and its stainless steel counterpart. The steel pieces may have slightly less detail than the handcrafted silver version.
                 p 87.30 &euro;
                 |
-                form(name='Secret Shadow', value='87,30', action='/application', method='post')
-                  button.addToCart( type='submit' ) Add me to your collection
+                form( action='/application', method='post')
+                  input( name='itemname', value='Secret Shadow' hidden )
+                  button.addToCart( action='/application', method='post' type='submit' ) Add me to your collection
           li.shopping_list_item
             img(alt='Sleepy cat with awesome watch by Tattoo Design Jewellery', title='New Season Watch by Tattoo Design Jewellery', src='images/Products/cat_thumbnail.jpg')
             .preview
@@ -90,7 +91,8 @@ html
                 p 412.00 &euro;
                 |
                 |
-                form(name='Silver Love', value='412,00', action='/application', method='post')
+                form( action='/application', method='post')
+                  input( name='itemname', value='Silver Love' hidden )
                   button.addToCart( type='submit' ) Add me to your collection
           li.shopping_list_item
             img(alt='Clock by Tattoo Design Jewellery', title='New Season Clock by Tattoo Design Jewellery', src='images/Products/clock_thumbnail.jpg')
@@ -103,7 +105,8 @@ html
                   | The nice thing about wearing a chain with a big ol&rsquo; tomahawk on it is that it speaks for itself. Know what I mean? Comes on a 30-inch 3mm gauge stainless steel chain. Silver version has custom sterling silver hardware. There may be small differences between the pictured sterling silver piece and its stainless steel counterpart. The steel pieces may have slightly less detail than the handcrafted silver version.
                 p 46.23 &euro;
                 |
-                form(name='Sailors Heaven', value='46,23', action='/application', method='post')
+                form(action='/application', method='post')
+                  input( name='itemname', value='Sailors Heaven' hidden )
                   button.addToCart( type='submit' ) Add me to your collection
           li.shopping_list_item
             img(alt='Sleepy cat with awesome watch by Tattoo Design Jewellery', title='New Season Watch by Tattoo Design Jewellery', src='images/Products/cat_thumbnail.jpg')
@@ -116,7 +119,8 @@ html
                   | We all know the legend: As the full moon rises, the crazies come out to play. Featuring a pair of howling wolves, this cuff is a reminder to let your inner animal off the leash, regardless of where we are in the lunar cycle. There may be small differences between the pictured sterling silver piece and its stainless steel counterpart. The steel pieces may have slightly less detail than the handcrafted silver version.
                 p 26.47 &euro;
                 |
-                form(name='Miauuu', value='26,47', action='/application', method='post')
+                form(action='/application', method='post')
+                  input( name='itemname', value='Miauuu' hidden )
                   button.addToCart( type='submit' ) Add me to your collection
           li.shopping_list_item
             .sold_out
@@ -145,7 +149,8 @@ html
                   | Archers were a vital addition to any medieval army, and from high in the turrets, skilled bowmen were often the only hopes of holding off a violent usurping. This ring is for the sharpshooters working to prevent the siege. There may be small differences between the pictured sterling silver piece and its stainless steel counterpart. The steel pieces may have slightly less detail than the handcrafted silver version.
                 p 10.99 &euro;
                 |
-                form(name='Lady in Black', value='10,99', action='/application', method='post')
+                form(action='/application', method='post')
+                  input( name='itemname', value='Lady in Black' hidden )
                   button.addToCart( type='submit' ) Add me to your collection
     .switch.shoppingCart
       .shoppingCartLook
