@@ -1,14 +1,15 @@
 //required packages for the app//
-const express = require('express'),
-    bodyParser = require('body-parser'),
-    pug = require('pug'),
-    sequelize = require('sequelize'),
-    //passport = require('passport'),
-    session = require('express-session')
+const express = require('express')
+const bodyParser = require('body-parser')
+const pug = require('pug')
+const sequelize = require('sequelize')
+const session = require('express-session')
 
 const app = express()
 //import database
-const db = require(__dirname + '/modules/db')
+const db = require( __dirname + '/modules/db' )
+const mail = require( __dirname + '/modules/emails.js' )
+
 
 //API keys and Passport configuration.
 //const passport = require('./config/passport');
@@ -38,6 +39,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 
+
 // make the database
 app.get('/', (req, res) => {
     res.render('application')
@@ -61,12 +63,18 @@ app.post('/login', (req, res) => {
             req.session.visited = true
             //stores the users data in the session after login. Data can be uses in dashboard
             req.session.user = user
-            res.redirect('/')
-            console.log('session after', req.session)
+            // Send away (need to set up in shoppingcart)
+            return mail( user, 'Order done yay', 'This is awesome' )
+
         } else {
             res.render('wronglogin')
         }
-    })
+    }).then( apiresponse => {
+      res.redirect('/')
+      console.log('session after', req.session.user)
+    } ).catch( err => {
+      console.log('Sendgrid errored with ', err)
+    } )
 })
 
 app.post('/register', (req, res) => {
@@ -86,8 +94,5 @@ app.post('/register', (req, res) => {
 })
 
 app.listen(3000, function() {
-    console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')
-
+  console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')
 })
-
-//db.sync( { force: false} )
