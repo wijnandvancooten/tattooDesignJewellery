@@ -48,18 +48,18 @@ app.get('/', (req, res) => {
 
 app.get('/shopcart', (req, res) => {
     console.log( 'these items are in your cart(first one counted twice): ', req.session.order )
-  //  for( i=0; i<req.session.order.length; i++ ) {
-    req.session.order.forEach( function(item) {
+    Promise.all(req.session.order.map( function(item) {
         console.log(item)
-        db.product.findOne({
+        return db.product.findOne({
             where: {
                 name: item
             }
         } )
-    } ).then( item  => {
-    console.log('these should be the chosen products: ', item)
-    res.render('shopcart', { products: things } ) 
-     } )
+    } ) )
+        .then( stuff  => {
+        console.log('these should be the chosen products: ', stuff)
+        res.render('shopcart', { products: stuff } ) 
+        } )
 } )
 //login post for users. checks data in database and compares it to the input form the body
 app.post('/login', (req, res) => {
