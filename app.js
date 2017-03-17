@@ -47,17 +47,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/shopcart', (req, res) => {
-    console.log( 'these items are in your cart(first one counted twice): ',req.session.order.length , req.session.order[0], req.session.order )
-    let theproducts = []
+    console.log( 'these items are in your cart(first one counted twice): ', req.session.order )
   //  for( i=0; i<req.session.order.length; i++ ) {
     req.session.order.forEach( function(item) {
-        theproducts.push(db.product.findOne({
+        console.log(item)
+        db.product.findOne({
             where: {
                 name: item
             }
-        } ) )
-    } ).then( things  => {
-    console.log('these should be the chosen products: ', things)
+        } )
+    } ).then( item  => {
+    console.log('these should be the chosen products: ', item)
     res.render('shopcart', { products: things } ) 
      } )
 } )
