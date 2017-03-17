@@ -1,0 +1,7 @@
+extends ./application
+block content
+    div.shoppingCartLook
+        each product in products
+            .card.card-block
+                p= product.name + product.price
+        a(href='#login') next

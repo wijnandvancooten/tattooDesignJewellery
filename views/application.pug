@@ -25,7 +25,7 @@ html
                 li#showContact
                   a(href='#contact') contact
                 li
-                  a.shopButton(href='#') shopping cart
+                  a.shopButton(href='/shopcart') shopping cart
         #contact
           a.facebook(href='#', title='Facebook')
           a.instagram(href='#', title='Instagram')
@@ -201,38 +201,6 @@ html
                 form(action='/application', method='post')
                   input( name='itemname', value='Lady in Black' hidden )
                   button.addToCart( type='submit' ) Add me to your collection
-    .switch.shoppingCart
-      .shoppingCartLook
-        //- Here we need a form with the action to send an email, e.g. action=/order-mail
-        div
-          h1.shoppingCartTitle
-            | Shopping cart
-            h1
-        div
-          table
-            tr
-              th
-              th Price
-              th Item
-            tr
-              td
-              td 10,99
-              td watch
-            tr
-              td
-              td 510,99
-              td cat
-            tr
-              td
-              td 35,99
-              td silver ring with no stones
-            tr
-              td total cost
-              td 557,97
-              td
-            | &gt;
-            p U have all u want?
-          div
-            li#showPayPage
-              a(href='#login') next
+  
+    block content
     script(type='text/javascript', src='js/custom.js')

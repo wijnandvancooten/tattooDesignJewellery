@@ -25,16 +25,6 @@ $(document).ready(function() {
 });
 
 //custom.js for Tattoo Design webpage//
-/*** JS for Shopping Cart ***/
-var values = ['price'];
-var names = ['product'];
-
-$('.addToCart').click(function() {
-    names.push($(this).attr('name'));
-    values.push($(this).val());
-    console.log(values)
-    console.log(names)
-});
 
 //$(".shopButton").click(function() {
 //    $("div.switch").toggleClass("shoppingCart");
