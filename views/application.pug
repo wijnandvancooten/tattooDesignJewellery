@@ -68,7 +68,7 @@ html
                 input.form-control(type='password', name='password', id='password', placeholder='Password', required)
             .form-group
               .col-sm-offset-3.col-sm-7
-                button.col-sm-3.btn.btn-primary(type='submit')
+                button.col-sm-3.btn.btn-primary(type='submit', class='gotopaypage',  href='#payment')
                   i.fa.fa-user
                   | Login
                 a.btn.btn-link(href='/forgot') Forgot your password?
@@ -101,32 +101,13 @@ html
                   input.form-control(type='password', name='password', id='password', placeholder='Lastname', required)
               .form-group
                 .col-sm-offset-3.col-sm-7
-                  button.col-sm-3.btn.btn-primary(type='submit', href='#payment')
+                  button.col-sm-3.btn.btn-primary(type='submit', class='gotopaypage', href='#payment')
                     i.fa.fa-user
                     | Submit
-            #payment
-              form.form-horizontal(method='POST', action='/payment')
-                .form-group
-                  label.col-sm-3.control-label(for='object') object
-                  .col-sm-7
-                    input.form-control(type='text', name='object', placeholder='object', autofocus, required)
-                .form-group
-                  label.col-sm-3.control-label(for='exp_month') exp_month
-                  .col-sm-7
-                    input.form-control(type='integer', name='exp_month', id='exp_month', placeholder='exp_month', required)
-                .form-group
-                  label.col-sm-3.control-label(for='exp_year') Address
-                  .col-sm-7
-                    input.form-control(type='integer', name='exp_year', id='exp_year', placeholder='exp_year', required)
-                .form-group
-                  label.col-sm-3.control-label(for='number') Card Number
-                  .col-sm-7
-                    input.form-control(type='integer', name='number', id='number', placeholder='Card Number', required)
-                .form-group
-                  .col-sm-offset-3.col-sm-7
-                    button.col-sm-3.btn.btn-primary(type='submit', href='#payment')
-                      i.fa.fa-user
-                      | Submit
+        if userlogin
+          #payment
+            form(action='', method='POST')
+              script.stripe-button(src='https://checkout.stripe.com/checkout.js', data-key='pk_test_WZi9Ovwr1YO6hsZIbFOLz6dq', data-amount='20000', data-name='Tattoo Design Jewellery', data-description='payment', data-image='/img/documentation/checkout/marketplace.png', data-label='Pay with Card or Bitcoin', data-locale='auto', data-currency='usd', data-bitcoin='true')
         .font
           h1#anodyne
             | Tattoo
