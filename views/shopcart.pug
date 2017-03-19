@@ -1,13 +1,16 @@
 extends ./application
 block content
     div.shoppingCartLook
+      div.shoppingCartText
+        h2 Hej, that's gonna look awesome on you.
+        br
         each product in products
             .card.card-block
-                p= product.name + " " + product.price
+                p= product.name + " " + "€ " + product.price
         - var total = 0
         each product in products
             - total = total + product.price
-        p='Total Price:  ' + total
+        h4="Total Price:  " + "€ " + total
         div
           li#showPayPage
-            a(href='#login') next
+            a.btn.btn-default(href='#login') Beautification in 3. 2. 1.
