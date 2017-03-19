@@ -235,6 +235,10 @@ body, html {
 	opacity: 0.8;
 }
 
+form.form-horizontal {
+  margin-top: 2em;
+}
+
 #payment {
 	z-index:1000000;
   float: right;
