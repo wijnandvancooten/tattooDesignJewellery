@@ -91,7 +91,6 @@ $(".hamburger").click(function() {
 })
 
 
-
 //menu's close on scroll//
 $(window).scroll(function() {
 
