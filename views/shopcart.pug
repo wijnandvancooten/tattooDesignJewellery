@@ -1,0 +1,13 @@
+extends ./application
+block content
+    div.shoppingCartLook
+        each product in products
+            .card.card-block
+                p= product.name + " " + product.price
+        - var total = 0
+        each product in products
+            - total = total + product.price
+        p='Total Price:  ' + total
+        div
+          li#showPayPage
+            a(href='#login') next

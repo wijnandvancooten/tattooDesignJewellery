@@ -25,6 +25,23 @@ $(document).ready(function() {
 });
 
 //custom.js for Tattoo Design webpage//
+
+
+//photo change jombotron page1//
+
+var imageArray = ['../images/Header/Header_4.jpg', '../images/Header/Header_5.jpg'];
+var imageIndex = 0;
+
+function changeBgImage(){
+    var imageUrl = "url('" + imageArray[imageIndex] + "')"
+    $('.jumbotron').css('background-image', imageUrl)
+    imageIndex++
+    if (imageIndex >= imageArray.length) {
+        imageIndex = 0
+    }
+}
+
+setInterval(changeBgImage, 5000)
 /*** JS for Shopping Cart ***/
 var values = ['price'];
 var names = ['product'];
@@ -36,9 +53,8 @@ $('.addToCart').click(function() {
     console.log(names)
 });
 
-//$(".shopButton").click(function() {
-//    $("div.switch").toggleClass("shoppingCart");
-//});
+
+
 
 /*** JS for Navigation ***/
 $(".menu").hide()
@@ -61,9 +77,24 @@ $("#showPayPage").click(function() {
     $(".switch").hide("slow")
     $("#login").slideToggle("slow")
 })
+// $("#payment").hide();
+// $("gotopaypage").click(function() {
+//     $(".switch").hide("slow")
+//     $("#payment").slideToggle("slow")
+// })
 $(".hamburger").click(function() {
     $(".switch").hide("slow")
 })
+
+$(".hamburger").click(function() {
+    $(".shoppingCartLook").hide("slow")
+})
+
+$(".hamburger").click(function() {
+    $(".login").hide("slow")
+})
+
+
 
 //menu's close on scroll//
 $(window).scroll(function() {
@@ -84,6 +115,13 @@ $(window).scroll(function() {
 
     if ($(this).scrollTop() > 0) {
         $('.switch').fadeOut();
+    }
+});
+
+$(window).scroll(function() {
+
+    if ($(this).scrollTop() > 0) {
+        $('.shoppingCartLook').fadeOut();
     }
 });
 
