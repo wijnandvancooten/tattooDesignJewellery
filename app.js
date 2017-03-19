@@ -48,9 +48,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/shopcart', (req, res) => {
-    console.log( 'these items are in your cart(first one counted twice): ', req.session.order )
+
+  if (!req.session.order) {
+    res.render('shopcart', {
+      products: 0
+    })
+
+  } else {
+
+    // console.log( 'these items are in your cart(first one counted twice): ', req.session.order )
     Promise.all(req.session.order.map( function(item) {
-        console.log(item)
+        // console.log(item)
         return db.product.findOne({
             where: {
                 name: item
@@ -58,9 +66,11 @@ app.get('/shopcart', (req, res) => {
         } )
     } ) )
         .then( stuff  => {
-        console.log('these should be the chosen products: ', stuff)
+        // console.log('these should be the chosen products: ', stuff)
         res.render('shopcart', { products: stuff } )
         } )
+
+  }
 } )
 //login post for users. checks data in database and compares it to the input form the body
 app.post('/login', (req, res) => {
@@ -117,18 +127,18 @@ app.post('/register', (req, res) => {
 })
 
 app.post( '/application', ( req, res ) => {
-    console.log( 'someone is trying to buy something' )
-    console.log( req.session.order )
+    // console.log( 'someone is trying to buy something' )
+    // console.log( req.session.order )
     if ( req.session.order ) {
-        console.log( 'the order in the current session is: ', req.session.order )
-        console.log( 'session still on? ', req.session.order )
+        // console.log( 'the order in the current session is: ', req.session.order )
+        // console.log( 'session still on? ', req.session.order )
         req.session.order.push(req.body.itemname)
         res.render( 'application', {order: req.session.order} )
     } else {
-        console.log( 'let us get this order started' )
-        console.log( 'is this the product name?', req.body, req.body.itemname )
+        // console.log( 'let us get this order started' )
+        // console.log( 'is this the product name?', req.body, req.body.itemname )
         req.session.order = [ req.body.itemname  ]
-        console.log( req.session.order )
+        // console.log( req.session.order )
         res.render( 'application', {order: req.session.order} )
         }
 } )
