@@ -59,7 +59,7 @@ app.get('/shopcart', (req, res) => {
     } ) )
         .then( stuff  => {
         console.log('these should be the chosen products: ', stuff)
-        res.render('shopcart', { products: stuff } ) 
+        res.render('shopcart', { products: stuff } )
         } )
 } )
 //login post for users. checks data in database and compares it to the input form the body
@@ -111,7 +111,9 @@ app.post('/register', (req, res) => {
     db.user.create(newUser)
     req.session.visited = true
     req.session.user = newUser
-    res.redirect('/payment')
+    res.render('application', {
+      userlogin: req.session.visited
+    })
 })
 
 app.post( '/application', ( req, res ) => {
