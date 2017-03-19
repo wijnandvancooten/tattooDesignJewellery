@@ -79,7 +79,7 @@ $("#showPayPage").click(function() {
 })
 
 $(".hamburger").click(function() {
-    $(".switch").hide("slow")
+    $("#login").hide("slow")
 })
 
 $(".hamburger").click(function() {
