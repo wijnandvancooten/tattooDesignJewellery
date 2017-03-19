@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 //photo change jombotron page1//
 
-var imageArray = ['../images/Header/Header_3.jpg', '../images/Header/Header_4.jpg', '../images/Header/Header_5.jpg'];
+var imageArray = ['../images/Header/Header_4.jpg', '../images/Header/Header_5.jpg'];
 var imageIndex = 0;
 
 function changeBgImage(){
