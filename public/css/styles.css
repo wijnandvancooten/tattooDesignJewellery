@@ -139,6 +139,29 @@ body, html {
   border: 4px solid black;
   background: black;
   opacity: 0.9;
+  text-align: center;
+}
+
+#showPayPage {
+  list-style: none;
+}
+
+#showPayPage a {
+  color: #000;
+}
+
+.shoppingCartText h2 {
+  font-family: 'Anodyne';
+  font-size: 3em;
+  color: #fff;
+}
+
+.shoppingCartText h4 {
+  color: #fff;
+}
+
+.shoppingCartText p {
+  color: #fff;
 }
 
 .shoppingCartTitle {
@@ -149,6 +172,7 @@ body, html {
   width: 100%;
   text-align:center;
 }
+
 .table {
   border-collapse: separate;
   empty-cells: hide;
