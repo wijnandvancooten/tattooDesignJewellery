@@ -300,6 +300,8 @@ form.form-horizontal {
   opacity: 1;
   cursor: pointer;
   border-radius: 3px;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .shopping_list_item > img:hover {
@@ -366,6 +368,8 @@ form.form-horizontal {
   display: inline-block;
   margin: 50px 0 50px 50px;
   cursor: default;
+  -webkit-filter: grayscale(0);
+filter: grayscale(0);
 }
 
 .preview_text h1 {
