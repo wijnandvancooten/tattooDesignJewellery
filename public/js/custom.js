@@ -87,9 +87,8 @@ $(".hamburger").click(function() {
 })
 
 $(".hamburger").click(function() {
-    $(".login").hide("slow")
+    $("#payment").hide("slow")
 })
-
 
 //menu's close on scroll//
 $(window).scroll(function() {
