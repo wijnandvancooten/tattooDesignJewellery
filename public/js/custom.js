@@ -74,16 +74,8 @@ $(".shopButton").click(function() {
 })
 $("#login").hide();
 $("#showPayPage").click(function() {
-    $(".switch").hide("slow")
+    $(".shoppingCartLook").hide("slow")
     $("#login").slideToggle("slow")
-})
-// $("#payment").hide();
-// $("gotopaypage").click(function() {
-//     $(".switch").hide("slow")
-//     $("#payment").slideToggle("slow")
-// })
-$(".hamburger").click(function() {
-    $(".switch").hide("slow")
 })
 
 $(".hamburger").click(function() {
