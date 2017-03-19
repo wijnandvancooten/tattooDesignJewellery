@@ -25,7 +25,7 @@ $(document).ready(function() {
 });
 
 //custom.js for Tattoo Design webpage//
-<<<<<<< HEAD
+
 
 //photo change jombotron page1//
 
@@ -52,8 +52,7 @@ $('.addToCart').click(function() {
     console.log(values)
     console.log(names)
 });
-=======
->>>>>>> master
+
 
 
 

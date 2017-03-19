@@ -34,11 +34,7 @@ db.order = db.conn.define( 'order', {
 
 db.comment = db.conn.define( 'comment', {
   name: { type: sequelize.STRING, allowNull: false },
-<<<<<<< HEAD
-  content: { type: sequelize.STRING, allowNull: false}
-=======
-  content: { type: sequelize.STRING, allowNull: false }
->>>>>>> master
+  content: { type: sequelize.STRING, allowNull: false},
 } )
 
 db.user.hasMany( db.order )
