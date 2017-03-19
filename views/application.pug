@@ -5,7 +5,7 @@ html
     meta(name='viewport', content='initial-scale=1, maximum-scale=1')
     meta(name='viewport', content='width=device-width')
     meta(name='description', content='tattoo design Jewellery')
-    title Tattoo Tesign Jewellery
+    title Tattoo Design Jewellery
     script(type='text/javascript', src='js/lib/jQuery/jquery-3.1.1.js')
     link(rel='stylesheet', href='css/lib/bootstrap/css/bootstrap.css')
     link(rel='stylesheet', href='css/styles.css')
@@ -94,7 +94,7 @@ html
               .form-group
                 label.col-sm-3.control-label(for='password') Password
                 .col-sm-7
-                  input.form-control(type='password', name='password', id='password', placeholder='Lastname', required)
+                  input.form-control(type='password', name='password', id='password', placeholder='Password', required)
               .form-group
                 .col-sm-offset-3.col-sm-7
                   button.col-sm-3.btn.btn-primary(type='submit', class='gotopaypage', href='#payment')
@@ -102,7 +102,6 @@ html
                     | Submit
         if userlogin
           #payment
-            form(action='', method='POST')
               script.stripe-button(src='https://checkout.stripe.com/checkout.js', data-key='pk_test_WZi9Ovwr1YO6hsZIbFOLz6dq', data-amount='20000', data-name='Tattoo Design Jewellery', data-description='payment', data-image='/img/documentation/checkout/marketplace.png', data-label='Pay with Card or Bitcoin', data-locale='auto', data-currency='usd', data-bitcoin='true')
         .font
           h1#anodyne
