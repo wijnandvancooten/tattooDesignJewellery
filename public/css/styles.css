@@ -325,14 +325,17 @@ form.form-horizontal {
 
 .sold_out img {
   cursor: default;
+  -webkit-filter: grayscale(10);
+  filter: grayscale(10);
 }
 
 .sold_out h1 {
-  font-size: 40px;
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #000;
   position: absolute;
   text-align: center;
-  top: 85px;
-  left: 50px;
+  top: 10px;
   color: #fff;
   cursor: default;
 }
