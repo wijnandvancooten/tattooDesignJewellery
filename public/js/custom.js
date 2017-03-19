@@ -108,6 +108,15 @@ $(window).scroll(function() {
     }
 });
 
+$(window).scroll(function() {
+
+    if ($(this).scrollTop() > 0) {
+        $('.shoppingCartLook').fadeOut();
+    }
+});
+
+
+
 var navColor = $('#page2').offset().top - 100;
 
 function logScroll() {
