@@ -86,6 +86,16 @@ $(".hamburger").click(function() {
     $(".switch").hide("slow")
 })
 
+$(".hamburger").click(function() {
+    $(".shoppingCartLook").hide("slow")
+})
+
+$(".hamburger").click(function() {
+    $(".login").hide("slow")
+})
+
+
+
 //menu's close on scroll//
 $(window).scroll(function() {
 
@@ -105,6 +115,13 @@ $(window).scroll(function() {
 
     if ($(this).scrollTop() > 0) {
         $('.switch').fadeOut();
+    }
+});
+
+$(window).scroll(function() {
+
+    if ($(this).scrollTop() > 0) {
+        $('.shoppingCartLook').fadeOut();
     }
 });
 
