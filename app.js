@@ -47,6 +47,21 @@ app.get('/', (req, res) => {
     res.render('application')
 })
 
+app.get('/shopcart', (req, res) => {
+    console.log( 'these items are in your cart(first one counted twice): ', req.session.order )
+    Promise.all(req.session.order.map( function(item) {
+        console.log(item)
+        return db.product.findOne({
+            where: {
+                name: item
+            }
+        } )
+    } ) )
+        .then( stuff  => {
+        console.log('these should be the chosen products: ', stuff)
+        res.render('shopcart', { products: stuff } ) 
+        } )
+} )
 //login post for users. checks data in database and compares it to the input form the body
 app.post('/login', (req, res) => {
     console.log('info in body: ', req.body.email)
@@ -56,7 +71,7 @@ app.post('/login', (req, res) => {
         where: {
             email: req.body.email
         }
-    }).then(user => {
+    } ).then(user => {
         console.log('what is user in the .then ', user)
         if (user.password == req.body.password) {
             //console.log ('loged in: ' + req.body.username)
@@ -115,6 +130,8 @@ app.post( '/application', ( req, res ) => {
         res.render( 'application', {order: req.session.order} )
         }
 } )
+
+
 
 app.listen(3000, function() {
   console.log('Web server started on port 3000. You rock!!!! ;).... Happy coding')

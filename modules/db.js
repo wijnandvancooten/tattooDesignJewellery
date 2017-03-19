@@ -34,7 +34,11 @@ db.order = db.conn.define( 'order', {
 
 db.comment = db.conn.define( 'comment', {
   name: { type: sequelize.STRING, allowNull: false },
+<<<<<<< HEAD
   content: { type: sequelize.STRING, allowNull: false}
+=======
+  content: { type: sequelize.STRING, allowNull: false }
+>>>>>>> master
 } )
 
 db.user.hasMany( db.order )
@@ -88,7 +92,7 @@ db.conn.sync( { force: false} )
     } )
 } ).then( f => {
     db.product.create( {
-        name: 'Miau',
+        name: 'Miauuu',
         description: 'This substantial bracelet straps on with the force of a prison shackle. The only difference is you won&rsquo;t be fighting to take it off any time soon. There may be small differences between the pictured sterling silver piece and its stainless steel counterpart. The steel pieces may have slightly less detail than the handcrafted silver version.',
         price: 26.47,
         stock: 10,
