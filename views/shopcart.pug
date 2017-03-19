@@ -8,4 +8,6 @@ block content
         each product in products
             - total = total + product.price
         p='Total Price:  ' + total
-        a(href='#login') next
+        div
+          li#showPayPage
+            a(href='#login') next
