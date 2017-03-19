@@ -28,8 +28,7 @@ $(document).ready(function() {
 
 
 //photo change jombotron page1//
-
-var imageArray = ['../images/Header/Header_4.jpg', '../images/Header/Header_5.jpg'];
+var imageArray = ['../images/Header/Header_4.jpg', '../images/Header/Header_5.jpg', '../images/Header/Header_6.jpg'];
 var imageIndex = 0;
 
 function changeBgImage(){
@@ -40,7 +39,7 @@ function changeBgImage(){
         imageIndex = 0
     }
 }
-
+changeBgImage()
 setInterval(changeBgImage, 5000)
 /*** JS for Shopping Cart ***/
 var values = ['price'];
@@ -57,21 +56,29 @@ $('.addToCart').click(function() {
 
 
 /*** JS for Navigation ***/
+
+//hides the menu, when clicked on menu icon the menu folds down
 $(".menu").hide()
 $(".hamburger").click(function() {
     $(".menu").slideToggle("slow")
 })
+
+//when in menu click on contact it shows the contact information
 $("#contact").hide();
 $("#showContact").click(function() {
     $("#contact").slideToggle("slow")
 })
+
+// when click on the menu icon it closes the contact details
 $(".hamburger").click(function() {
     $("#contact").hide("slow")
 })
+
 $("#contact").hide();
 $(".shopButton").click(function() {
     $(".switch").slideToggle("slow")
 })
+
 $("#login").hide();
 $("#showPayPage").click(function() {
     $(".shoppingCartLook").hide("slow")
@@ -83,9 +90,12 @@ $(".hamburger").click(function() {
 })
 
 $(".hamburger").click(function() {
-    $(".login").hide("slow")
+    $("#login").hide("slow")
 })
 
+$(".hamburger").click(function() {
+    $("#payment").hide("slow")
+})
 
 
 //menu's close on scroll//
