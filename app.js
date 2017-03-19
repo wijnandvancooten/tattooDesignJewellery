@@ -2,8 +2,9 @@
 const express = require('express'),
     bodyParser = require('body-parser'),
     pug = require('pug'),
-    sequelize = require('sequelize')
+    sequelize = require('sequelize'),
     session = require( 'express-session' )
+
 
 const app = express()
 //import database
@@ -80,13 +81,15 @@ app.post('/login', (req, res) => {
             //stores the users data in the session after login. Data can be uses in dashboard
             req.session.user = user
             // Send away (need to set up in shoppingcart)
-            return mail( user, 'Order done yay', 'This is awesome' )
+            //return mail( user, 'Order done yay', 'This is awesome' )
 
         } else {
             res.render('wronglogin')
         }
     }).then( apiresponse => {
-      res.redirect('/')
+      res.render('application', {
+        userlogin: req.session.visited
+      })
       console.log('session after', req.session.user)
     } ).catch( err => {
       console.log('Sendgrid errored with ', err)
@@ -106,7 +109,9 @@ app.post('/register', (req, res) => {
     //console.log(newUser)
     //creats a new user in the table users.
     db.user.create(newUser)
-    res.redirect('/')
+    req.session.visited = true
+    req.session.user = newUser
+    res.redirect('/payment')
 })
 
 app.post( '/application', ( req, res ) => {

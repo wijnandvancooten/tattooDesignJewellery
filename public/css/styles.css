@@ -37,13 +37,28 @@ body, html {
 }
 
 .jumbotron {
-	background:  url('../images/Header/Header_3.jpg');
+	background:  url('../images/Header/Header_6.jpg');
 	-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;;
+  background-size: cover;
 	height: 100vh;
   z-index: -1;
+}
+
+.jumbotron {
+  /**-webkit-animation: fadeinout 6s linear forwards;
+  animation: fadeinout 6s linear forwards;**/
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 /*** Navigation Section ***/
 .hamburgerDiv{
@@ -204,6 +219,34 @@ body, html {
   width: 95%;
   height: 97%;
 
+}
+/*** payment section of the page***/
+#login {
+	z-index:1000000;
+  float: right;
+  margin-top: 40px;
+	right: 25%;
+	position:fixed;
+	font-size:1.0em;
+  text-align: center;
+  color: white;
+	width:50%;
+  background:#131313;
+	opacity: 0.8;
+}
+
+#payment {
+	z-index:1000000;
+  float: right;
+  margin-top: 40px;
+	right: 25%;
+	position:fixed;
+	font-size:1.0em;
+  text-align: center;
+  color: white;
+	width:50%;
+  background:#131313;
+	opacity: 0.8;
 }
 
 /*** Shopping Grid Section ***/
